@@ -1,0 +1,76 @@
+﻿Paper_ID,CD_Sample_Name,Reaction_Temperature,Reaction_Time,Microwave_Power,Precursor_Identity,Precursor_Amount,Solvent_Identity,Solvent_Amount
+10,N/A,180°C,24h,50W,N/A,N/A,dichloromethane  (0,N/A
+11,N/A,160°C,3h,150W,N/A,N/A,to formamide (FA,N/A
+12,N/A,180°C,2h,N/A,L/D-GSH,N/A,to  10  mL  of formamide (FA) and transferred to a  50  mL  high-pressure reactor to heat at  180 °C  for  2 h,N/A
+14,N/A,100K,6h,1W,N/A,N/A,N/A,N/A
+15,N/A,80°C,4h,800W,N/A,N/A,methanol to obtain a crude extract of hemolytic toxin,N/A
+16,N/A,120°C,3h,0.1W,N/A,N/A,N/A,N/A
+17,N/A,200°C,2h,3W,FA and  CuCl_2,N/A,15  mL  of ethanol,N/A
+18,N/A,160°C,12h,1.0W,N/A,N/A,ultrapure water,N/A
+19,N/A,200°C,10h,33342W,N/A,N/A,N/A,N/A
+1,N/A,2014K,6h,20W,N/A,N/A,double distilled water `100mL to afford 1,N/A
+20,N/A,37°C,72h,700W,N/A,N/A,N/A,N/A
+21,N/A,N/A,2h,7.5W,N/A,N/A,10  mL water and stirred for 2h,N/A
+22,N/A,N/A,6h,1W,N/A,N/A,N/A,N/A
+23,N/A,N/A,5h,8W,N/A,N/A,20  mL of ultra-pure water,N/A
+24,N/A,37°C,3h,0W,N/A,N/A,2ml of distilled water in an open vessel and treated in a high-temperature oven 190 ^∘C,N/A
+25,N/A,50°C,2h,1W,N/A,N/A,10 mL hydrochloric acid solution (0,N/A
+26,N/A,200°C,8h,7.0W,the classic hydrothermal technique with  o -phenylenediamine and 5-boronoisophthal,N/A,20  mL  of deionized water and then transferred to a hydrothermal reactor,N/A
+27,N/A,4°C,1.h,80W,citric acid (CA) and ethylenediamine (EDA),N/A,to 5,N/A
+28,N/A,180°C,2h,5W,N/A,N/A,100 mL of deionized water with continuous stirring,N/A
+29,N/A,30°C,2h,350W,N/A,N/A,20  mL ultrapure water by sonication for 30 min,N/A
+2,N/A,37°C,1h,750W,N/A,N/A,5 mL of deionized water in  ![](images/93fcb80c853ecc57e82fc29532892aefe8054184028c1c96b978ee06dee0a1e5,N/A
+30,N/A,37°C,2h,14W,N/A,N/A,to distilled water and filtered with a syringe filter (0,N/A
+31,N/A,210°C,2h,940W,N/A,N/A,DI water and stored at 4 °C under dark,N/A
+32,N/A,180°C,2h,N/A,N/A,N/A,20ml  of water,N/A
+33,N/A,200°C,6h,8W,N/A,N/A,20  mL  DI water,N/A
+35,N/A,170°C,2h,9.0W,N/A,N/A,N/A,N/A
+36,N/A,250°C,2h,69.5W,N/A,N/A,N/A,N/A
+38,N/A,37°C,2012.h,700W,N/A,N/A,10 mL of distilled water (pH3),N/A
+3,N/A,20°C,5min,700W,N/A,N/A,water,N/A
+40,N/A,37°C,22h,6W,4T1 cells,N/A,N/A,N/A
+41,N/A,4°C,7.h,7W,N/A,N/A,10  mL of glycol,N/A
+42,N/A,42°C,13h,25.W,N/A,N/A,10  mL of distilled water,N/A
+44,N/A,170°C,2h,N/A,ethylene glycol and 𝐋 -valine,N/A,100  mL of DI water,N/A
+45,N/A,180°C,24h,96W,N/A,N/A,N/A,N/A
+46,N/A,4°C,8h,7.0W,N/A,N/A,10,N/A
+48,N/A,4°C,3.5min,4W,N/A,N/A,20  mL deionized water and stirred vigorously to form a clear and homogeneous solution,N/A
+49,N/A,4°C,13h,14W,N/A,N/A,60  mL of ultrapure water and sonicated for 15  min to completely dissolve them,N/A
+4,N/A,900°C,12h,2W,N/A,N/A,36ml  acetic acid  (2wt%),N/A
+50,N/A,N/A,24h,7.8W,N/A,N/A,30,N/A
+52,N/A,200°C,7h,N/A,N/A,N/A,30  mL  DDI water,N/A
+53,N/A,500°C,9h,28W,N/A,N/A,10  mL of ultrapure water,N/A
+54,N/A,4°C,3h,0W,N/A,N/A,N/A,N/A
+55,N/A,100°C,70h,1W,N/A,N/A,10  mL of water,N/A
+56,N/A,200K,9h,4W,nitrogen-containing carbon sources,N/A,ultrapure water or PBS buffer solution at a pre-defined fixed concentration,N/A
+57,N/A,37°C,01858h,35W,N/A,N/A,N/A,N/A
+58,N/A,220°C,24h,1W,N/A,N/A,N/A,N/A
+59,N/A,4°C,5h,7.4W,N/A,N/A,15 mL of double distilled water,N/A
+5,N/A,200°C,2023h,1W,N/A,N/A,8 mL  redistilled water,N/A
+60,N/A,180°C,4h,8W,N/A,N/A,10  mL  of methanol solution in a  50  mL  Teflon-lined stainless autoclave and then heated at  180 °C  for  4 h,N/A
+62,N/A,200°C,3h,5W,N/A,N/A,25  mL  of water,N/A
+63,N/A,200K,10h,29W,N/A,N/A,deionized water before use,N/A
+64,N/A,N/A,22h,2W,N/A,N/A,10  mL of DDI water,N/A
+65,N/A,180°C,7h,2W,N/A,N/A,NaAc-HAc buffer solution and configured into  H_2O_2  solutions of different concentrations (final working concentrations: 0,N/A
+66,N/A,180°C,2h,1.W,arginine and dopamine hydrochloride,N/A,N/A,N/A
+67,N/A,65°C,5h,1W,N/A,N/A,25,N/A
+68,N/A,3.5K,8h,13W,N/A,N/A,15  mL of water and placed in a glass vial which was then placed in a Teflon-lined autoclave chamber (Hydrion Scientific,N/A
+69,N/A,180°C,12h,2W,sodium lignosulfonate and ferric chloride,N/A,20  mL  of ultrapure water and stirred thoroughly,N/A
+6,N/A,180°C,6h,2W,N/A,N/A,10 mL deionized water to make a clear solution,N/A
+70,N/A,4°C,2.0h,7W,N/A,N/A,N/A,N/A
+71,N/A,90°C,24h,127W,N/A,N/A,40  mL  of anhydrous ethanol,N/A
+72,N/A,180°C,6814.h,1.W,N/A,N/A,5 mL  of acetic acid,N/A
+73,N/A,200°C,1h,2W,N/A,N/A,40  mL  of deionized water under rapid stirring,N/A
+75,N/A,210°C,8h,2W,N/A,N/A,water,N/A
+76,N/A,0.2°C,25h,1W,N/A,N/A,ultrapure water  (10,N/A
+77,N/A,220°C,7h,4.W,N/A,N/A,to  10  mL  of ultrapure water with ultrasonic treatment,N/A
+78,N/A,180°C,24h,4W,N/A,N/A,N/A,N/A
+79,N/A,180°C,24h,12W,N/A,N/A,25  mL  deionized water,N/A
+7,N/A,37°C,6h,900W,N/A,N/A,N/A,N/A
+82,N/A,4°C,48h,1200W,citric acid (CA) and ethylenediamine (En),N/A,10  mL  of DI water,N/A
+83,N/A,170°C,6h,1W,N/A,N/A,N/A,N/A
+84,N/A,180°C,8h,2W,N/A,N/A,S_2O_8^2-  solution to achieve a powerful ECL signal for further construction of an ECL biosensor,N/A
+8,N/A,10°C,2.5h,300W,N/A,N/A,1 ml of ultrapure water,N/A
+92,N/A,180°C,13h,2W,N/A,N/A,20  mL  acetic acid via ultrasonic dispersion,N/A
+93,N/A,37°C,2h,800W,N/A,N/A,N/A,N/A
+9,N/A,160°C,375h,2004W,N/A,N/A,N/A,N/A
