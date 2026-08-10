@@ -1,0 +1,501 @@
+﻿source_table,source_record_key,article_key,Temperature_raw,Time_raw,temperature_c,time_h,Component_1,Component_2,Component_3,Component_4,Component_5,Component_6,Component_7,target_Em_nm
+old_Em_20260803,4:3|cds,||3||3,200 °C,2 h,200.0,2.0,4-(diethylamino)salicylaldehyde,phosphoric acid,,,,,,595.0
+old_Em_20260803,6:4|g-cds,||4||4,180°C,12 h,180.0,12.0,3-diethylaminophenol,hydrochloric acid,nitric acid,ethanol,,,,505.0
+old_Em_20260803,29:353|c-dots,||353||353,200 °C,4-5 h,200.0,4.5,citric acid,ethylenediamine,water,,,,,440.0
+old_Em_20260803,32:355|y-cds,||355||355,160 °C,5 h,160.0,5.0,o-phenylenediamine,water,,,,,,566.0
+old_Em_20260803,45:360|g-cqds,||360||360,200 °C,12 h,200.0,12.0,phthalic acid,o-phenylenediamine,ethanol,,,,,529.0
+old_Em_20260803,46:360|o-cqds,||360||360,200 °C,12 h,200.0,12.0,phthalic acid,o-phenylenediamine,ethanol,,,,,573.0
+old_Em_20260803,48:360|y-cqds,||360||360,200 °C,12 h,200.0,12.0,phthalic acid,o-phenylenediamine,ethanol,,,,,547.0
+old_Em_20260803,56:364|cqds,||364||364,200°C,6 h,200.0,6.0,citric acid,water,,,,,,460.0
+old_Em_20260803,57:365|u-cds,||365||365,200 °C,12 h,200.0,12.0,o-phenylenediamine,urea,water,,,,,590.0
+old_Em_20260803,79:373|sicds,||373||373,160 °C,8 h,160.0,8.0,malic acid,n-[3-(trimethoxysilyl)propyl]ethylenediamine,water,,,,,450.0
+old_Em_20260803,80:374|b-cds,||374||374,160 °C,4 h,160.0,4.0,citric acid,ethylenediamine,water,,,,,443.0
+old_Em_20260803,81:374|y-cds,||374||374,210 °C,10 h,210.0,10.0,glutamic acid,o-phenylenediamine,"n,n-dimethylformamide",,,,,539.0
+old_Em_20260803,114:389|n-cd_3,||389||389,200 °C,1 h,200.0,1.0,citric acid,ethylenediamine,water,,,,,450.0
+old_Em_20260803,115:389|n-cd_4,||389||389,200 °C,1 h,200.0,1.0,citric acid,ethylenediamine,water,,,,,450.0
+old_Em_20260803,116:389|n-cd_5,||389||389,200 °C,1 h,200.0,1.0,citric acid,ethylenediamine,water,,,,,464.0
+old_Em_20260803,138:396|bn-cds,||396||396,180 °C,5 h,180.0,5.0,citric acid,ethylenediamine,boric acid,water,,,,472.0
+old_Em_20260803,142:398|cqd10,||398||398,160°C,6 h,160.0,6.0,citric acid,urea,water,,,,,440.0
+old_Em_20260803,"167:404|f,n-cds",||404||404,200 °C,2 hours,200.0,2.0,p-phenylenediamine,5-fu,water,,,,,523.0
+old_Em_20260803,168:53|n-cqds,||53||53,160 °C,4 h,160.0,4.0,citric acid,urea,water,,,,,510.0
+old_Em_20260803,177:55|cd_0,||55||55,180 °C,5 h,180.0,5.0,fructose,water,,,,,,350.0
+old_Em_20260803,254:437|blue-emissive cds,||437||437,180 °C,2 h,180.0,2.0,nicotinic acid,folic acid,water,,,,,441.0
+old_Em_20260803,303:6|3-hpba-based cds,||6||6,200 °C,2 h,200.0,2.0,3-hydroxyphenylboronic acid,water,,,,,,376.0
+old_Em_20260803,342:467|nr-cds,||467||467,180°C,12 h,180.0,12.0,citric acid,2-aminopyridine (2-ap),water,,,,,421.0
+old_Em_20260803,"347:473|b,n-cqds",||473||473,240 °C,4 h,240.0,4.0,3-carboxyphenylboronic acid,ethylenediamine,water,,,,,509.0
+old_Em_20260803,350:475|arg/glu-cqds,||475||475,200 °C,30 min,200.0,0.5,glucose,arginine,sodium hydroxide,water,,,,450.0
+old_Em_20260803,377:488|cqds,||488||488,200 °C,8 h,200.0,8.0,p-phenylenediamine,citric acid,water,,,,,496.0
+old_Em_20260803,405:503|cd2,||503||503,180 °C,10 h,180.0,10.0,2-aminonaphthalene,potassium persulfate,ethanol,,,,,445.0
+old_Em_20260803,406:503|cd3,||503||503,180 °C,10 h,180.0,10.0,2-anthracylamine,potassium persulfate,ethanol,,,,,510.0
+old_Em_20260803,407:503|cd4,||503||503,180 °C,10 h,180.0,10.0,1-aminopyrene,potassium persulfate,ethanol,,,,,440.0
+old_Em_20260803,427:516|n/s-cds,||516||516,150 °C,6 h,150.0,6.0,thiourea,o-phenylenediamine,ethanol,,,,,556.0
+old_Em_20260803,449:531|ncqds,||531||531,180 °C,12 h,180.0,12.0,tartaric acid,arginine,ethanol,,,,,425.0
+old_Em_20260803,483:551|cds,||551||551,180 °C,5 h,180.0,5.0,proline,ethylenediamine,water,,,,,405.0
+old_Em_20260803,531:574|l-cds,||574||574,140 °C,12 h,140.0,12.0,lutein,ethylenediamine,ethanol,water,,,,460.0
+old_Em_20260803,547:586|green emitting cds,||586||586,180 °C,10 h,180.0,10.0,phenol,ethylenediamine,water,,,,,513.0
+old_Em_20260803,"552:589|n,s-cqds",||589||589,110°C,8 hours,110.0,8.0,citric acid,thiosemicarbazide,water,,,,,430.0
+old_Em_20260803,584:607|lysine-based carbon dots,||607||607,180 °C,3 h,180.0,3.0,lysine,water,ethanol,,,,,500.0
+old_Em_20260803,613:616|green-emissive cqds,||616||616,200 °C,2 h,200.0,2.0,m-phenylenediamine,cysteine,water,,,,,510.0
+old_Em_20260803,630:625|hcds (optimal),||625||625,180 °C,7 h,180.0,7.0,ascorbic acid,urea,water,,,,,410.0
+old_Em_20260803,669:638|clcqds,||638||638,200°C,12 h,200.0,12.0,citric acid,urea,sodium chloride,water,,,,490.0
+old_Em_20260803,674:640|cds,||640||640,180 °C,12 h,180.0,12.0,"3,5-diaminobenzoic acid",ethanol,,,,,,493.0
+old_Em_20260803,695:649|pg-nbe-t-cqds,||649||649,200 °C,4 h,200.0,4.0,resorcinol,ethanol,,,,,,520.0
+old_Em_20260803,696:649|pr-nbe-t-cqds,||649||649,200 °C,7 h,200.0,7.0,resorcinol,ethanol,,,,,,610.0
+old_Em_20260803,741:659|bcqd,||659||659,180°C,12 h,180.0,12.0,boric acid,citric acid,water,,,,,425.0
+old_Em_20260803,762:663|n-cds,||663||663,160 °C,12 h,160.0,12.0,caffeic acid,ethylenediamine,water,,,,,510.0
+old_Em_20260803,777:668|ncds,||668||668,150 °C,6 h,150.0,6.0,ascorbic acid,ethylenediamine,ethanol,water,,,,465.0
+old_Em_20260803,782:673|cds,||673||673,160°C,8 h,160.0,8.0,4-carboxyphenylboronic acid,water,,,,,,360.0
+old_Em_20260803,784:675|n-cqds,||675||675,300 °C,6 h,300.0,6.0,folic acid,water,,,,,,450.0
+old_Em_20260803,855:693|n-cqds,||693||693,190 °C,12 h,190.0,12.0,glucose,m-phenylenediamine,water,,,,,460.0
+old_Em_20260803,857:695|c-dots,||695||695,200°C,5 h,200.0,5.0,citric acid,histidine,water,,,,,414.0
+old_Em_20260803,"858:696|n,p-cds",||696||696,180 °C,12 h,180.0,12.0,citric acid,o-phosphorylethanolamine,water,,,,,435.0
+old_Em_20260803,866:700|o-cqds,||700||700,180°C,5 hours,180.0,5.0,citric acid,water,,,,,,430.0
+old_Em_20260803,897:711|glucose-3-nitroaniline-h3po4 cds,||711||711,180 °C,4 h,180.0,4.0,glucose,3-nitroaniline,water,phosphoric acid,,,,500.0
+old_Em_20260803,899:711|glucose-4-nitroaniline-h2so4 cds,||711||711,180 °C,4 h,180.0,4.0,glucose,4-nitroaniline,water,sulfuric acid,,,,430.0
+old_Em_20260803,911:7|cds,||7||7,160°C,5 h,160.0,5.0,cysteine,ethylene glycol dimethacrylate,water,,,,,420.0
+old_Em_20260803,"915:74|n, s-cds",||74||74,160 °C,3 h,160.0,3.0,citric acid,thiosemicarbazide,water,,,,,415.0
+old_Em_20260803,938:725|cds (aa),||725||725,160°C,1.5 h,160.0,1.5,ascorbic acid,urea,n-acetylcysteine,water,,,,453.0
+old_Em_20260803,939:725|cds (ca),||725||725,160°C,1.5 h,160.0,1.5,citric acid,urea,n-acetylcysteine,water,,,,421.0
+old_Em_20260803,940:725|cds (glucose),||725||725,160°C,1.5 h,160.0,1.5,glucose,urea,n-acetylcysteine,water,,,,451.0
+old_Em_20260803,977:737|cqds,||737||737,150°C,5 h,150.0,5.0,citric acid,ethylenediamine,water,,,,,448.0
+old_Em_20260803,986:743|cds,||743||743,160 °C,3 h,160.0,3.0,chloranil,triethylenetetramine,water,,,,,510.0
+old_Em_20260803,1017:758|fncds,||758||758,160 °C,4 hours,160.0,4.0,glycine,"2,4-difluorobenzoic acid",ethanol,water,,,,502.0
+old_Em_20260803,1050:769|ppd-thiourea-cds,||769||769,160 °C,10 h,160.0,10.0,p-phenylenediamine,thiourea,water,,,,,532.0
+old_Em_20260803,1053:770|se-cds,||770||770,200 °C,4 h,200.0,4.0,selenocystine,water,,,,,,471.0
+old_Em_20260803,"1058:77|n,p-cds",||77||77,240 °C,12 h,240.0,12.0,arginine,phosphoric acid,water,,,,,444.0
+old_Em_20260803,1061:776|mn-free cds,||776||776,180 °C,12 h,180.0,12.0,o-phenylenediamine,ethanol,,,,,,542.0
+old_Em_20260803,1068:78|n-cds,||78||78,160 °C,8 h,160.0,8.0,o-phenylenediamine,tryptophan,water,,,,,560.0
+old_Em_20260803,1076:784|r-cds,||784||784,200 °C,12 h,200.0,12.0,p-phenylenediamine,ethanol,,,,,,617.0
+old_Em_20260803,"1100:80|s,n-cqds",||80||80,200 °C,3 h,200.0,3.0,citric acid,cysteine,,,,,,510.0
+old_Em_20260803,1165:809|d-cds,||809||809,180 °C,4 h,180.0,4.0,citric acid,"n,n-dimethylformamide",,,,,,505.0
+old_Em_20260803,1166:809|e-cds,||809||809,180 °C,4 h,180.0,4.0,citric acid,ethanamide,,,,,,605.0
+old_Em_20260803,1167:809|f-cds,||809||809,180 °C,4 h,180.0,4.0,citric acid,formamide,,,,,,650.0
+old_Em_20260803,1168:809|u-cds,||809||809,180 °C,4 h,180.0,4.0,citric acid,urea,,,,,,550.0
+old_Em_20260803,1261:815|n-cds,||815||815,200 °C,8 h,200.0,8.0,p-phenylenediamine,ammonia,water,,,,,515.0
+old_Em_20260803,1263:816|g-cds,||816||816,160°C,10 h,160.0,10.0,asparagine,p-phenylenediamine,water,,,,,505.0
+old_Em_20260803,1264:816|o-cds,||816||816,160°C,10 h,160.0,10.0,asparagine,p-phenylenediamine,water,,,,,575.0
+old_Em_20260803,1265:816|r-cds,||816||816,160°C,10 h,160.0,10.0,asparagine,p-phenylenediamine,water,,,,,625.0
+old_Em_20260803,"1360:865|n, f-cds",||865||865,180 °C,12 h,180.0,12.0,"3,4-difluorophenylhydrazine hydrochloride",ethanol,,,,,,530.0
+old_Em_20260803,1365:869|d-1,||869||869,200 °C,12 h,200.0,12.0,"3,7-dinitro-10h-phenothiazine",water,,,,,,486.0
+old_Em_20260803,1374:874|n-cqds,||874||874,200 °C,4 h,200.0,4.0,citric acid,"2,6-diaminopyridine",water,,,,,394.0
+old_Em_20260803,1442:884|n-cds,||884||884,200 °C,6 h,200.0,6.0,citric acid,urea,water,,,,,425.0
+old_Em_20260803,1466:890|ncds,||890||890,200 °C,5 h,200.0,5.0,acrylic acid,ethylenediamine,water,,,,,425.0
+old_Em_20260803,1468:892|n-cqds,||892||892,150 °C,2 h,150.0,2.0,citric acid,ethylenediamine,water,,,,,445.0
+old_Em_20260803,1471:895|n-cds,||895||895,160°C,4 h,160.0,4.0,citric acid,urea,water,,,,,436.0
+old_Em_20260803,1509:905|hydrothermal-based c-dots,||905||905,200 °C,2 hours,200.0,2.0,citric acid,urea,water,,,,,435.0
+old_Em_20260803,1536:915|fncds,||915||915,200 °C,12 h,200.0,12.0,glycine,"2,4-difluorobenzoic acid",water,,,,,508.0
+old_Em_20260803,1593:930|cds,||930||930,200 °C,4 h,200.0,4.0,salicylic acid,water,,,,,,425.0
+old_Em_20260803,1610:945|ns-cds,||945||945,190 °C,6 hours,190.0,6.0,cysteine,water,,,,,,440.0
+old_Em_20260803,"1620:90|n, s-cds",||90||90,200 °C,2 hours,200.0,2.0,glucose,ammonium persulfate,ethylenediamine,water,,,,442.0
+old_Em_20260803,"1621:951|n-cqds (2,2'-dpa)",||951||951,180 °C,6 h,180.0,6.0,"2,2'-dipicolylamine (2,2'-dpa)",water,,,,,,446.0
+old_Em_20260803,1629:957|nfcds,||957||957,180 °C,12 h,180.0,12.0,glycine,"2,3,4-trifluorobenzoic acid",water,,,,,506.0
+old_Em_20260803,1633:961|f-cds,||961||961,200°C,8 h,200.0,8.0,pfos,hydrogen peroxide,water,,,,,447.0
+old_Em_20260803,1659:974|dopa-cqds,||974||974,160 °C,8 h,160.0,8.0,levodopa,urea,ethanol,,,,,530.0
+old_Em_20260803,1664:976|cds-di,||976||976,170 °C,5.5 h,170.0,5.5,o-phenylenediamine,ethanol,,,,,,538.0
+old_Em_20260803,1666:976|cds-tri,||976||976,170 °C,5.5 h,170.0,5.5,"1,2,4-benzenetriamine dihydrochloride",ethanol,,,,,,598.0
+old_Em_20260803,1669:976|y-cds,||976||976,170 °C,5.5 h,170.0,5.5,"1,2,4,5-benzenetetramine tetrahydrochloride",ethanol,,,,,,554.0
+old_Em_20260803,1670:977|ssf-cds,||977||977,200 °C,300 min,200.0,5.0,dehydroabietic acid,ethanolamine,water,,,,,510.0
+old_Em_20260803,1671:978|y-cds,||978||978,180 °C,12 h,180.0,12.0,o-phenylenediamine,nitric acid,ethanol,,,,,570.0
+old_Em_20260803,1679:981|nscds,||981||981,180 °C,18 h,180.0,18.0,cysteine,water,,,,,,420.0
+old_Em_20260803,1708:992|si-cqds,||992||992,210 °C,2 h,210.0,2.0,glucosamine,nq-62,acetone,,,,,450.0
+old_Em_20260803,1736:996|g-cds,||996||996,180 °C,4 h,180.0,4.0,betaine hydrochloride,sulfadiazine,ethylenediamine,water,,,,520.0
+old_Em_20260803,1738:997|4-cp-derived c-dots,||997||997,185 °C,10 h,185.0,10.0,4-chlorophenol (4-cp),ethanol,,,,,,445.0
+old_Em_20260803,1775:1015|cqds-s,||1015||1015,200 °C,15 hours,200.0,15.0,arginine,phosphoric acid,water,,,,,450.0
+old_Em_20260803,1865:1049|cds-100,||1049||1049,100 °C,1 h,100.0,1.0,citric acid,tris(hydroxymethyl)aminomethane,potassium persulfate,water,,,,528.0
+old_Em_20260803,1879:1056|y-cds,||1056||1056,160 °C,5 h,160.0,5.0,o-phenylenediamine,water,,,,,,568.0
+old_Em_20260803,1972:1079|p-cds,||1079||1079,240 °C,5 h,240.0,5.0,folic acid,water,,,,,,393.0
+old_Em_20260803,2073:1104|phenyl-cds,||1104||1104,180 °C,12 h,180.0,12.0,o-phenylenediamine,ethanol,,,,,,595.0
+old_Em_20260803,2154:113|bright yellow fluorescent cds,||113||113,180 ∘C,12 h,180.0,12.0,"n-methyl-1,2-benzendiamine dihydrochloride",ethanol,,,,,,540.0
+old_Em_20260803,2159:1133|riboflavin-ethylenediamine cds,||1133||1133,180 °C,6 hours,180.0,6.0,riboflavin,ethylenediamine,water,,,,,502.0
+old_Em_20260803,2170:1135|cqd in ethanol (n=2),||1135||1135,210 °C,5 h,210.0,5.0,"9,10-dinitroanthracene",sodium hydroxide,ethanol,,,,,580.0
+old_Em_20260803,2210:1149|ag:ca (2:1) c-dots,||1149||1149,150 °C,2 hours,150.0,2.0,aminoguanidine hydrochloride,citric acid,water,,,,,480.0
+old_Em_20260803,2234:1161|cqds,||1161||1161,180 °C,3 h,180.0,3.0,glutathione,water,,,,,,445.0
+old_Em_20260803,2239:1166|c/n-dots,||1166||1166,180 °C,5 h,180.0,5.0,tartaric acid,ethylenediamine,water,,,,,430.0
+old_Em_20260803,2270:1177|hedta n-cds,||1177||1177,230 °C,10 h,230.0,10.0,n-(2-hydroxyethyl) ethylenediamine triacetic acid (hedta),sodium hydroxide,water,,,,,440.0
+old_Em_20260803,2326:119|n-cds,||119||119,180 °C,8 h,180.0,8.0,ad,ethylenediamine,water,,,,,535.0
+old_Em_20260803,2332:1190|si-cds,||1190||1190,200 °C,12 h,200.0,12.0,citric acid,dicyandiamide,3-aminopropyltriethoxysilane,water,ethanol,,,525.0
+old_Em_20260803,2343:1193|g-cds,||1193||1193,160 °C,4 h,160.0,4.0,citric acid,urea,ethanol,,,,,513.0
+old_Em_20260803,2344:1193|r-cds,||1193||1193,160 °C,4 h,160.0,4.0,citric acid,urea,formic acid,,,,,620.0
+old_Em_20260803,2345:1193|y-cds,||1193||1193,160 °C,4 h,160.0,4.0,citric acid,urea,formic acid,,,,,557.0
+old_Em_20260803,2378:1207|n-cqds_0.2,||1207||1207,200 °C,6 h,200.0,6.0,citric acid,dl-alaninol,water,,,,,410.0
+old_Em_20260803,2379:1207|n-cqds_0.4,||1207||1207,200 °C,6 h,200.0,6.0,citric acid,dl-alaninol,water,,,,,410.0
+old_Em_20260803,2380:1207|n-cqds_0.6,||1207||1207,200 °C,6 h,200.0,6.0,citric acid,dl-alaninol,water,,,,,410.0
+old_Em_20260803,2381:1207|n-cqds_0.8,||1207||1207,200 °C,6 h,200.0,6.0,citric acid,dl-alaninol,water,,,,,410.0
+old_Em_20260803,2382:1207|n-cqds_1.0,||1207||1207,200 °C,6 h,200.0,6.0,citric acid,dl-alaninol,water,,,,,410.0
+old_Em_20260803,2383:1207|n-cqds_1.1,||1207||1207,200 °C,6 h,200.0,6.0,citric acid,dl-alaninol,water,,,,,410.0
+old_Em_20260803,2384:1207|n-cqds_1.2,||1207||1207,200 °C,6 h,200.0,6.0,citric acid,dl-alaninol,water,,,,,450.0
+old_Em_20260803,2412:1217|silane functionalized fluorescent cds,||1217||1217,200°C,2 h,200.0,2.0,citric acid,aeap,water,,,,,450.0
+old_Em_20260803,2513:1247|bncds,||1247||1247,200 °C,10 h,200.0,10.0,3-aminobenzeneboronic acid,water,,,,,,422.5
+old_Em_20260803,2514:1247|clbncds,||1247||1247,200 °C,10 h,200.0,10.0,3-amino-4-chlorophenylboronic acid,water,,,,,,430.0
+old_Em_20260803,2515:1247|ncds,||1247||1247,200 °C,10 h,200.0,10.0,aniline,water,,,,,,422.0
+old_Em_20260803,2516:1247|free-cds,||1247||1247,200 °C,10 h,200.0,10.0,benzene,water,,,,,,420.0
+old_Em_20260803,2520:1250|cds,||1250||1250,180 °C,4 h,180.0,4.0,citric acid,ethylenediamine,water,,,,,460.0
+old_Em_20260803,2559:1266|blue-cbqds,||1266||1266,200 °C,6 h,200.0,6.0,citric acid,urea,water,,,,,440.0
+old_Em_20260803,2585:1278|cds,||1278||1278,180°C,8 h,180.0,8.0,o-phenylenediamine,2-hydroxy-3-methoxybenzaldehyde,water,,,,,570.0
+old_Em_20260803,2625:1292|y-cqds,||1292||1292,180 °C,10 h,180.0,10.0,citric acid,urea,ethanol,,,,,550.0
+old_Em_20260803,2628:1293|e-c-dots,||1293||1293,180°C,10 h,180.0,10.0,pyromellitic dianhydride,ethylenediamine,"n,n-dimethylformamide",water,,,,500.0
+old_Em_20260803,2629:1293|e-n-c-dots,||1293||1293,180°C,10 h,180.0,10.0,ntda,ethylenediamine,"n,n-dimethylformamide",water,,,,550.0
+old_Em_20260803,2631:1293|p-c-dots,||1293||1293,180°C,10 h,180.0,10.0,pyromellitic dianhydride,p-phenylenediamine,"n,n-dimethylformamide",water,,,,610.0
+old_Em_20260803,2632:1293|p-n-c-dots,||1293||1293,180°C,10 h,180.0,10.0,ntda,p-phenylenediamine,"n,n-dimethylformamide",water,,,,585.0
+old_Em_20260803,2706:1317|ncds,||1317||1317,200 °C,36 h,200.0,36.0,acrylamide,urea,citric acid,water,,,,488.0
+old_Em_20260803,2819:1349|p-cds,||1349||1349,150 °C,2 hours,150.0,2.0,glucose,glycine,water,,,,,500.0
+old_Em_20260803,2833:1359|n-cqds,||1359||1359,160 °C,8 h,160.0,8.0,citric acid,o-phenylenediamine,water,,,,,440.0
+old_Em_20260803,2840:1365|cd1,||1365||1365,180 °C,12 h,180.0,12.0,"1,5-nda",water,ethanol,,,,,430.0
+old_Em_20260803,2841:1365|cd2,||1365||1365,200 °C,12 h,200.0,12.0,"1,5-nda",water,ethanol,,,,,570.0
+old_Em_20260803,2853:1370|r-cds,||1370||1370,180 °C,3 h,180.0,3.0,p-phenylenediamine,water,,,,,,632.0
+old_Em_20260803,2854:1370|y-cds,||1370||1370,180 °C,3 h,180.0,3.0,o-phenylenediamine,water,,,,,,573.0
+old_Em_20260803,2856:133|cd_f,||133||133,250 °C,4 h,250.0,4.0,citric acid,urea,fluorescein,sodium hydroxide,,,,525.0
+old_Em_20260803,2877:1375|carbon dots,||1375||1375,150 °C,10 h,150.0,10.0,acetone,water,,,,,,516.0
+old_Em_20260803,2878:1376|b-cds,||1376||1376,160°C,4 h,160.0,4.0,citric acid,urea,water,,,,,450.0
+old_Em_20260803,2879:1376|g-cds,||1376||1376,160°C,4 h,160.0,4.0,citric acid,urea,glycerol,,,,,550.0
+old_Em_20260803,2880:1376|r-cds,||1376||1376,160°C,4 h,160.0,4.0,citric acid,urea,"n,n-dimethylformamide",,,,,640.0
+old_Em_20260803,2945:1402|pure carbon quantum dots (cqds),||1402||1402,180 °C,10 h,180.0,10.0,citric acid,water,,,,,,438.0
+old_Em_20260803,2956:1404|m-cds,||1404||1404,250 °C,6 h,250.0,6.0,o-phenylenediamine,4-aminophenol,diphenyl ether,,,,,592.0
+old_Em_20260803,2958:1406|se-cqds,||1406||1406,60 °C,~24 h,60.0,24.0,l-selenocystine,water,,,,,,480.0
+old_Em_20260803,"2959:1407|yellow emissive se,n-codoped carbon dots",||1407||1407,180 °C,12 hours,180.0,12.0,o-phenylenediamine,selenourea,water,,,,,566.0
+old_Em_20260803,2960:1408|gqds,||1408||1408,180 °C,12 h,180.0,12.0,"1,5-diaminonaphthalene",ethanol,chloroform,,,,,510.0
+old_Em_20260803,2961:1410|n-cds,||1410||1410,200 °C,9 h,200.0,9.0,o-phenylenediamine,dicyandiamine,ethanol,,,,,555.0
+old_Em_20260803,2975:1416|blue emissive carbon dots (b-cds),||1416||1416,180 °C,8 h,180.0,8.0,pyromellitic acid,"n,n-dimethylformamide",,,,,,459.0
+old_Em_20260803,2986:1420|nitrogen-doped oxidized carbon dots (nocds),||1420||1420,180 °C,60 min,180.0,1.0,citric acid,urea,water,,,,,441.0
+old_Em_20260803,"2988:1422|n,p-cqds",||1422||1422,180°C,8 h,180.0,8.0,citric acid,ethylenediamine,phosphoric acid,water,,,,448.0
+old_Em_20260803,2990:1424|n-cqds,||1424||1424,190 °C,10 h,190.0,10.0,citric acid,ammonium hydroxide,water,,,,,450.0
+old_Em_20260803,"3016:1432|n,s-cds",||1432||1432,185 °C,6 h,185.0,6.0,citric acid,urea,thiourea,water,,,,443.0
+old_Em_20260803,3028:1445|n-cds,||1445||1445,160 °C,4 h,160.0,4.0,citric acid,ethylenediamine,water,,,,,445.0
+old_Em_20260803,3035:1447|n-cnds,||1447||1447,180 °C,12 h,180.0,12.0,o-phenylenediamine,ethanol,water,,,,,538.0
+old_Em_20260803,3067:1466|y-cds,||1466||1466,220 °C,3 h,220.0,3.0,o-phenylenediamine,water,,,,,,575.0
+old_Em_20260803,3121:146|bg-cqds,||146||146,180 ∘C,12 h,180.0,12.0,m-phenylenediamine,citric acid,water,ethanol,,,,490.0
+old_Em_20260803,3125:1479|gcd,||1479||1479,180 °C,12 h,180.0,12.0,sucrose,nitrobenzene,ethanol,,,,,510.0
+old_Em_20260803,3208:156|si-cds,||156||156,180 °C,6 h,180.0,6.0,eb,3-aminopropyltrimethoxysilane,water,,,,,516.0
+old_Em_20260803,3210:1509|ncds,||1509||1509,200 °C,5 h,200.0,5.0,citric acid,ethylenediamine,water,,,,,452.0
+old_Em_20260803,3211:1510|y-cds,||1510||1510,160 °C,8 h,160.0,8.0,o-phenylenediamine,water,,,,,,574.0
+old_Em_20260803,3221:1518|cds,||1518||1518,250 °C,1.0 h,250.0,1.0,succinic acid,[emim] n(cn) 2,,,,,,450.0
+old_Em_20260803,3243:1524|cds,||1524||1524,200 °C,5 h,200.0,5.0,citric acid,ethylenediamine,water,,,,,444.0
+old_Em_20260803,3296:19|carbon dots,||19||19,200 °C,5 h,200.0,5.0,ethylenediaminetetraacetic acid,"n,n-dimethylformamide",,,,,,550.0
+old_Em_20260803,3305:1557|cds,||1557||1557,100 - 220 °C,2 - 12 h,160.0,7.0,hydroquinone,ethylenediamine,water,,,,,520.0
+old_Em_20260803,3307:1558|n-cds,||1558||1558,200 °C,6 h,200.0,6.0,citric acid,ethanolamine,water,,,,,425.0
+old_Em_20260803,3315:168|fncds,||168||168,200 °C,48 h,200.0,48.0,"2,4-difluorobenzoic acid",glycine,water,,,,,513.0
+old_Em_20260803,3323:170|cqds,||170||170,180 °C,6 h,180.0,6.0,glutathione,ethylenediaminetetraacetic acid,water,,,,,450.0
+old_Em_20260803,3344:175|lgcds,||175||175,190 °C,24 h,190.0,24.0,lysine,glutathione,water,,,,,485.0
+old_Em_20260803,3353:1577|cds,||1577||1577,160 °C,8 h,160.0,8.0,citric acid,urea,"n,n-diethylformamide (dmf)",,,,,642.0
+old_Em_20260803,3359:1581|cpds synthesized from o-phenylenediamine and nitric acid,||1581||1581,200 °C,10 h,200.0,10.0,o-phenylenediamine,nitric acid,water,,,,,627.0
+old_Em_20260803,3378:1586|nocds,||1586||1586,180 °C,1 h,180.0,1.0,citric acid,urea,water,,,,,441.0
+old_Em_20260803,3398:184|cd1,||184||184,180 °C,6 h,180.0,6.0,3-aminophenylboronic acid,citric acid,water,,,,,420.0
+old_Em_20260803,3400:1595|g-cds,||1595||1595,220 °C,5 h,220.0,5.0,o-phenylenediamine,"n,n-dimethylformamide",,,,,,525.0
+old_Em_20260803,3401:1595|r-cds,||1595||1595,220 °C,5 h,220.0,5.0,o-phenylenediamine,thiourea,"n,n-dimethylformamide",water,,,,625.0
+old_Em_20260803,3439:1608|r- cds,||1608||1608,180 °C,4 h,180.0,4.0,citric acid,p-phenylenediamine,phytic acid,formamide,,,,620.0
+old_Em_20260803,3455:1611|se-cds,||1611||1611,60 °C,20 h,60.0,20.0,selenocystine,water,,,,,,440.0
+old_Em_20260803,3459:20|carbon dots,||20||20,190 °C,5 h,190.0,5.0,folic acid,sodium hydroxide,aeapms,,,,,475.0
+old_Em_20260803,3484:1615|bn-cds,||1615||1615,200 °C,8 h,200.0,8.0,aspartic acid,boric acid,water,,,,,430.0
+old_Em_20260803,3491:198|cd,||198||198,210 °C,6 h,210.0,6.0,"1,5-dihydroxyanthraquinone (anthrarufin)",hydrogen peroxide,"n,n-dimethylformamide",,,,,520.0
+old_Em_20260803,3493:1619|n-doped cpd,||1619||1619,180 °C,12 h,180.0,12.0,catechol,ethylenediamine,water,,,,,511.0
+old_Em_20260803,3497:201|hcds,||201||201,200 °C,6 h,200.0,6.0,methylene blue,sulfuric acid,ethanol,,,,,515.0
+old_Em_20260803,3498:201|ocds,||201||201,200 °C,6 h,200.0,6.0,methylene blue,sulfuric acid,ethanol,,,,,455.0
+old_Em_20260803,3516:204|triazine-doped c-dots,||204||204,200 °C,10 h,200.0,10.0,"2,4,6-trihydrazinyl-1,3,5-triazine (tht)",citric acid,water,,,,,440.0
+old_Em_20260803,3517:1624|n-cds,||1624||1624,180 °C,4 h,180.0,4.0,citric acid,urea,water,,,,,436.0
+old_Em_20260803,3543:1634|1-cds,||1634||1634,190 °C,8 h,190.0,8.0,ascorbic acid,arginine,water,,,,,420.0
+old_Em_20260803,3544:1634|2-cds,||1634||1634,190 °C,8 h,190.0,8.0,ascorbic acid,arginine,water,,,,,445.0
+old_Em_20260803,3545:1634|3-cds,||1634||1634,190 °C,8 h,190.0,8.0,ascorbic acid,arginine,water,,,,,460.0
+old_Em_20260803,3553:1638|gcd,||1638||1638,200 °C,8 hours,200.0,8.0,"1,2,4,5-benzenetetracarboxylic acid","2,7-diaminofluorene",ethanol,,,,,520.0
+old_Em_20260803,3554:1638|rcd,||1638||1638,200 °C,8 hours,200.0,8.0,"1,2,4,5-benzenetetracarboxylic acid","2,7-diaminofluorene",ethanol,,,,,605.0
+old_Em_20260803,3555:1638|ycd,||1638||1638,200 °C,8 hours,200.0,8.0,"1,2,4,5-benzenetetracarboxylic acid","2,7-diaminofluorene",ethanol,,,,,560.0
+old_Em_20260803,3557:1640|ncds,||1640||1640,200 °C,5 h,200.0,5.0,citric acid,ethylenediamine,water,,,,,443.0
+old_Em_20260803,3564:1644|cds,||1644||1644,200°C,12 h,200.0,12.0,quercetin,ethylenediamine,water,,,,,510.0
+old_Em_20260803,3580:1650|green olm-tadf-cqds,||1650||1650,125 °C,0.5 h,125.0,0.5,trimesic acid,"3,4,9,10-perylenetetracarboxylic dianhydride",sulfuric acid,formamide,,,,490.0
+old_Em_20260803,3581:1650|orange olm-tadf-cqds,||1650||1650,180 °C,2 h,180.0,2.0,trimesic acid,"3,4,9,10-perylenetetracarboxylic dianhydride",sulfuric acid,formamide,,,,570.0
+old_Em_20260803,3582:1650|red olm-tadf-cqds,||1650||1650,200 °C,4 h,200.0,4.0,trimesic acid,"3,4,9,10-perylenetetracarboxylic dianhydride",sulfuric acid,formamide,,,,616.0
+old_Em_20260803,3583:1650|yellow olm-tadf-cqds,||1650||1650,150 °C,1 h,150.0,1.0,trimesic acid,"3,4,9,10-perylenetetracarboxylic dianhydride",sulfuric acid,formamide,,,,520.0
+old_Em_20260803,3584:1651|b-cds,||1651||1651,200 °C,4h,200.0,4.0,citric acid,o-phenylenediamine,water,,,,,430.0
+old_Em_20260803,3585:1651|g-cds,||1651||1651,200 °C,4h,200.0,4.0,o-phenylenediamine,glutathione,water,,,,,500.0
+old_Em_20260803,3586:1651|y-cds,||1651||1651,200 °C,4h,200.0,4.0,p-phenylenediamine,water,,,,,,563.0
+old_Em_20260803,3613:1665|cd-3,||1665||1665,160 °C,6 h,160.0,6.0,glutathione,formamide,,,,,,680.0
+old_Em_20260803,3652:1677|nir-cqds,||1677||1677,160 °C,1 h,160.0,1.0,glutathione,formamide,,,,,,650.0
+old_Em_20260803,3665:1684|b-cds,||1684||1684,180 °C,6 h,180.0,6.0,kaempferide,p-methoxybenzylamine,potassium iodate,ethanol,,,,445.0
+old_Em_20260803,3666:1684|g-cds,||1684||1684,180 °C,6 h,180.0,6.0,kaempferide,ethylenediamine,potassium iodate,ethanol,,,,510.0
+old_Em_20260803,3667:1684|r-cds,||1684||1684,180 °C,6 h,180.0,6.0,kaempferide,o-phenylenediamine,nitric acid,ethanol,"n,n-dimethylformamide",,,600.0
+old_Em_20260803,3671:1688|ucds,||1688||1688,180 °C,2.5 h,180.0,2.5,citric acid,glutathione,water,,,,,422.0
+old_Em_20260803,3693:1698|n-cds,||1698||1698,180 °C,24 h,180.0,24.0,m-aminophenol,ethylenediamine,water,,,,,512.0
+old_Em_20260803,3719:1715|n-cds,||1715||1715,180 °C,10 h,180.0,10.0,diethylenetriamine,citric acid,water,,,,,436.0
+old_Em_20260803,3759:1733|n-cqds,||1733||1733,200 °C,6 h,200.0,6.0,citric acid,ethylenediamine,water,,,,,426.0
+old_Em_20260803,3824:1754|cd1,||1754||1754,180 °C,8 h,180.0,8.0,ascorbic acid,arginine,water,,,,,430.0
+old_Em_20260803,3825:1755|qcds,||1755||1755,180 °C,10 h,180.0,10.0,quercetin,ethanol,,,,,,447.0
+old_Em_20260803,3849:1766|bcds,||1766||1766,200°C,10 h,200.0,10.0,p-phenylenediamine,boric acid,ethanol,,,,,610.0
+old_Em_20260803,3877:213|mr-cds,||213||213,200 °C,6 h,200.0,6.0,tryptophan,glucose,water,,,,,450.0
+old_Em_20260803,3889:1784|sncds,||1784||1784,180 °C,9 h,180.0,9.0,o-phenylenediamine,benzenesulfonamide,water,,,,,562.0
+old_Em_20260803,3891:1785|gen-cds,||1785||1785,180 °C,3 hours,180.0,3.0,geniposide powder,water,,,,,,428.0
+old_Em_20260803,3922:1799|ncqds,||1799||1799,160 °C,16 h,160.0,16.0,citric acid,urea,"n,n-dimethylformamide",,,,,530.0
+old_Em_20260803,3935:1803|m-cds,||1803||1803,180 °C,6 h,180.0,6.0,5-aminosalicylic acid (5-asa),m-phenylenediamine,water,,,,,530.0
+old_Em_20260803,3936:1803|o-cds,||1803||1803,180 °C,6 h,180.0,6.0,5-aminosalicylic acid (5-asa),o-phenylenediamine,water,,,,,530.0
+old_Em_20260803,3937:1804|gcds,||1804||1804,160 °C,6 h,160.0,6.0,d-mannose,water,,,,,,450.0
+old_Em_20260803,3938:1804|glcds,||1804||1804,160 °C,6 h,160.0,6.0,d-mannose,o-phenylenediamine,water,,,,,504.0
+old_Em_20260803,3947:1809|pure blue light-emitting pcds,||1809||1809,180 °C,4 h,180.0,4.0,citric acid,lysine,water,,,,,422.0
+old_Em_20260803,3953:214|n-cdots-1,||214||214,200 °C,6 h,200.0,6.0,citric acid,urea,water,,,,,450.0
+old_Em_20260803,3955:214|n-cdots-3,||214||214,200 °C,6 h,200.0,6.0,citric acid,urea,"n,n-dimethylformamide",,,,,546.0
+old_Em_20260803,3960:1815|cy:eg-cds,||1815||1815,180 °C,3 h,180.0,3.0,citric acid,cysteine,ethylene glycol,,,,,523.0
+old_Em_20260803,4013:1840|cg-cds,||1840||1840,160 °C,8 h,160.0,8.0,glutathione,cholesterol,formamide,,,,,650.0
+old_Em_20260803,4016:1843|n- cds,||1843||1843,200 °C,5 h,200.0,5.0,citric acid,ethylenediamine,water,,,,,440.0
+old_Em_20260803,4041:216|g-cds,||216||216,180°C,5 h,180.0,5.0,citric acid,ethylenediamine,"n,n-dimethylformamide",,,,,528.0
+old_Em_20260803,4046:1858|r-cds (urea:l-dopa = 1:1),||1858||1858,200 °C,6 h,200.0,6.0,urea,levodopa,"n,n-dimethylformamide",,,,,623.0
+old_Em_20260803,4060:1868|b-cds,||1868||1868,180 °C,4 h,180.0,4.0,quercetin,water,,,,,,465.0
+old_Em_20260803,4075:1877|b-cds,||1877||1877,180 °C,3 hours,180.0,3.0,guanidine hydrochloride,acrylamide,sodium hydroxide,,,,,447.0
+old_Em_20260803,4079:1880|ncds,||1880||1880,180 °C,6 h,180.0,6.0,folic acid,water,,,,,,463.0
+old_Em_20260803,4087:1888|p-cds,||1888||1888,180 °C,12 h,180.0,12.0,m-aminophenol,phosphoric acid,ethanol,,,,,520.0
+old_Em_20260803,4123:1905|l-try-thr-cds,||1905||1905,160 °C,6 h,160.0,6.0,tryptophan,threonine,water,,,,,450.0
+old_Em_20260803,4157:1923|g-cds,||1923||1923,210 °C,12 h,210.0,12.0,citric acid,toluene,,,,,,527.0
+old_Em_20260803,4158:1923|y-cds,||1923||1923,210 °C,12 h,210.0,12.0,citric acid,melamine,toluene,,,,,568.0
+old_Em_20260803,4159:1923|y-cds (220 °c),||1923||1923,220 °C,12 h,220.0,12.0,citric acid,melamine,toluene,,,,,553.0
+old_Em_20260803,4160:1923|y-cds (240 °c),||1923||1923,240 °C,12 h,240.0,12.0,citric acid,melamine,toluene,,,,,553.0
+old_Em_20260803,4161:1923|y-cds (260 °c),||1923||1923,260 °C,12 h,260.0,12.0,citric acid,melamine,toluene,,,,,553.0
+old_Em_20260803,4203:1935|cl/cds,||1935||1935,180 °C,4 h,180.0,4.0,ascorbic acid,hydrochloric acid,water,,,,,530.0
+old_Em_20260803,4208:1940|b-cd,||1940||1940,160 °C,6 h,160.0,6.0,citric acid,urea,water,,,,,439.0
+old_Em_20260803,4231:1951|n-cds,||1951||1951,160 °C,6 h,160.0,6.0,levodopa,ethylenediamine,water,,,,,520.0
+old_Em_20260803,4290:1977|ncqds,||1977||1977,220 °C,10 h,220.0,10.0,"2,3-diaminopyridine",citric acid,water,,,,,430.0
+old_Em_20260803,4328:1993|g-cds,||1993||1993,180 °C,12 h,180.0,12.0,3-diethylaminophenol,ethanol,,,,,,494.0
+old_Em_20260803,4330:1993|o-cds,||1993||1993,180 °C,12 h,180.0,12.0,3-diethylaminophenol,sulfuric acid,ethanol,,,,,577.0
+old_Em_20260803,4331:1993|o-cds-m,||1993||1993,180 °C,12 h,180.0,12.0,3-diethylaminophenol,sulfuric acid,ethanol,,,,,577.0
+old_Em_20260803,4332:1994|n-cds,||1994||1994,200 °C,10 h,200.0,10.0,citric acid,"1,3-diaminopropane",water,,,,,438.0
+old_Em_20260803,4339:1996|cds,||1996||1996,180 °C,6 h,180.0,6.0,o-phenylenediamine,water,,,,,,567.0
+old_Em_20260803,4348:2004|si-cds,||2004||2004,200 °C,10 h,200.0,10.0,trans-aconitic acid,n-[3-(trimethoxysilyl)propyl]ethylenediamine,water,,,,,450.0
+old_Em_20260803,4349:2005|ncds,||2005||2005,180 °C,8 h,180.0,8.0,citric acid,ammonia,water,,,,,417.0
+old_Em_20260803,4351:2006|b-cqds,||2006||2006,160 °C,6 h,160.0,6.0,citric acid,thiourea,water,,,,,453.0
+old_Em_20260803,4396:2014|h-cds,||2014||2014,180 °C,10 h,180.0,10.0,melamine,dithiosalicylic acid,acetic acid,,,,,440.0
+old_Em_20260803,4427:2030|mo-cds,||2030||2030,200 °C,12 h,200.0,12.0,(nh4)6mo7o24,ascorbic acid,water,,,,,469.0
+old_Em_20260803,4428:2031|c-cds,||2031||2031,200 °C,2 h,200.0,2.0,citric acid,water,,,,,,395.0
+old_Em_20260803,"4432:2032|p, n-cds",||2032||2032,200 °C,12 h,200.0,12.0,m-aminophenol,phytic acid,water,,,,,530.0
+old_Em_20260803,4454:21|cqds,||21||21,180 °C,5 h,180.0,5.0,citric acid,ethylenediamine,water,,,,,460.0
+old_Em_20260803,"4462:2042|b, n-cds",||2042||2042,180 °C,6 h,180.0,6.0,3-apba,pro,water,,,,,420.0
+old_Em_20260803,4476:2052|pcds,||2052||2052,200 °C,8 h,200.0,8.0,dah,o-phenylenediamine,water,,,,,635.0
+old_Em_20260803,4484:2059|b- cds (high entropy system),||2059||2059,180 °C,10 h,180.0,10.0,3-aminopropyltriethoxysilane,water,,,,,,421.0
+old_Em_20260803,4488:2059|y- cds (high entropy system),||2059||2059,150 °C,10 h,150.0,10.0,maleic anhydride,,,,,,,478.0
+old_Em_20260803,4539:2070|g-cds,||2070||2070,230 °C,6 h,230.0,6.0,naringin,p-hydroxyacetophenone,ethanol,,,,,520.0
+old_Em_20260803,4541:2070|y-cds,||2070||2070,230 °C,6 h,230.0,6.0,naringin,p-aminoacetophenone,ethanol,,,,,553.0
+old_Em_20260803,4562:2079|i-cds,||2079||2079,160 °C,4 h,160.0,4.0,oleylamine,iodine,,,,,,440.0
+old_Em_20260803,4579:2085|b-cds,||2085||2085,30°C,6 min,30.0,0.1,levodopa,spermine,water,,,,,440.0
+old_Em_20260803,4580:2085|g-cds,||2085||2085,90°C,10 min,90.0,0.1666666666666666,ne,spermine,water,,,,,520.0
+old_Em_20260803,4581:2085|y-cds,||2085||2085,90°C,3 min,90.0,0.05,ep,spermine,water,,,,,560.0
+old_Em_20260803,4610:2093|ns-cds,||2093||2093,180 °C,10 h,180.0,10.0,ntz,mpa,water,,,,,425.0
+old_Em_20260803,4613:2095|laam gsh-cqds,||2095||2095,130 °C,6 h,130.0,6.0,glutathione,formamide,,,,,,683.0
+old_Em_20260803,"4617:2098|n, s, and o-doped cds",||2098||2098,200 °C,24 h,200.0,24.0,cysteine,water,,,,,,425.0
+old_Em_20260803,4654:2111|p-cds,||2111||2111,180 °C,5 h,180.0,5.0,diethylenetriaminepentaacetic acid,water,,,,,,410.0
+old_Em_20260803,4656:2113|product-1,||2113||2113,200 °C,5 h,200.0,5.0,cysteine,citric acid,water,,,,,420.0
+old_Em_20260803,4657:2113|product-2,||2113||2113,190 °C,6 h,190.0,6.0,urea,citric acid,water,,,,,410.0
+old_Em_20260803,4658:2113|product-3,||2113||2113,200 °C,8 h,200.0,8.0,ethylenediamine,citric acid,water,,,,,440.0
+old_Em_20260803,4660:2113|product-5,||2113||2113,180 °C,4 h,180.0,4.0,citric acid,thiourea,water,,,,,440.0
+old_Em_20260803,"4676:2117|n, f-cds",||2117||2117,180 °C,12 h,180.0,12.0,o-phenylenediamine,"2,3,5,6-tetrafluoroterephthalic acid",ethanol,,,,,540.0
+old_Em_20260803,4678:2118|cds,||2118||2118,120 °C,6 h,120.0,6.0,citric acid,glutathione,water,,,,,450.0
+old_Em_20260803,4702:2137|l-cds,||2137||2137,160 °C,7 h,160.0,7.0,tryptophan,o-phenylenediamine,water,sulfuric acid,,,,575.0
+old_Em_20260803,4723:2150|g-cds,||2150||2150,180 °C,6 h,180.0,6.0,o-phenylenediamine,water,,,,,,536.0
+old_Em_20260803,4731:2154|aa-cds,||2154||2154,160 °C,4 h,160.0,4.0,citric acid,ascorbic acid,formamide,,,,,630.0
+old_Em_20260803,4746:2161|f-cds,||2161||2161,200 °C,2 h,200.0,2.0,folic acid,arginine,tris(hydroxymethyl)aminomethane,water,,,,455.0
+old_Em_20260803,4751:2163|c-cds,||2163||2163,180 °C,8 h,180.0,8.0,citric acid,water,,,,,,417.0
+old_Em_20260803,4752:2163|ns-cds,||2163||2163,180 °C,8 h,180.0,8.0,citric acid,cysteamine hydrochloride,water,,,,,465.0
+old_Em_20260803,4805:2182|van-cds,||2182||2182,140 °C,12 h,140.0,12.0,vancomycin,citric acid,formamide,,,,,630.0
+old_Em_20260803,"4823:2190|n,s- nir- cds",||2190||2190,160 °C,480 min,160.0,8.0,glutathione,folic acid,formamide,,,,,650.0
+old_Em_20260803,4845:2203|sen-cds,||2203||2203,70 °C,24 h,70.0,24.0,citric acid,selenocystine,water,,,,,408.0
+old_Em_20260803,4865:229|cds,||229||229,205 °C,25 min,205.0,0.4166666666666667,citric acid,,,,,,,490.0
+old_Em_20260803,4884:2226|n/scds,||2226||2226,180 °C,8 h,180.0,8.0,2-mercaptothiazoline,p-phenylenediamine,ethanol,,,,,512.0
+old_Em_20260803,4889:2230|r-cds,||2230||2230,160 °C,4 h,160.0,4.0,citric acid,urea,formic acid,,,,,640.0
+old_Em_20260803,"4890:2231|n, s-cqds",||2231||2231,190 °C,9 h,190.0,9.0,asda-na4,m-phenylenediamine,water,,,,,515.0
+old_Em_20260803,4940:2243|lu-cds,||2243||2243,180 °C,10 h,180.0,10.0,luminol,dithiosalicylic acid,acetic acid,,,,,465.0
+old_Em_20260803,4976:2258|bcds,||2258||2258,180 °C,12 h,180.0,12.0,m-phenylenediamine,ethanol,,,,,,480.0
+old_Em_20260803,5066:2299|se-cds,||2299||2299,200 °C,2 h,200.0,2.0,selenocystamine,water,,,,,,445.0
+old_Em_20260803,5085:2311|ld-cds,||2311||2311,180 °C,6 h,180.0,6.0,3-dimethylaminophenol,"1,2-diamino-4-fluorobenzene",thiourea,ethanol,,,,563.0
+old_Em_20260803,5097:2316|ccds,||2316||2316,180 °C,8 h,180.0,8.0,ciprofloxacin,acetic acid,water,,,,,445.0
+old_Em_20260803,5102:2318|c-dots,||2318||2318,160 °C,4 h,160.0,4.0,citric acid,urea,water,,,,,440.0
+old_Em_20260803,5119:2325|cds,||2325||2325,160 °C,4 h,160.0,4.0,glutathione,formamide,,,,,,684.0
+old_Em_20260803,5160:2345|pcds,||2345||2345,180 °C,12 h,180.0,12.0,m-phenylenediamine,phosphoric acid,ethanol,,,,,535.0
+old_Em_20260803,5177:2350|naay,||2350||2350,200 °C,10 h,200.0,10.0,1-aminopyrene,"n,n-dimethylformamide",,,,,,480.0
+old_Em_20260803,5178:2350|nanm,||2350||2350,200 °C,10 h,200.0,10.0,1-naphthylamine,"n,n-dimethylformamide",,,,,,450.0
+old_Em_20260803,5180:2350|nare,||2350||2350,200 °C,10 h,200.0,10.0,resorcinol,sodium hydroxide,,,,,,430.0
+old_Em_20260803,5193:2358|mga-cds,||2358||2358,200 °C,8 h,200.0,8.0,gallic acid,metformin hydrochloride,sodium hydroxide,water,,,,460.0
+old_Em_20260803,5211:2368|or-cds,||2368||2368,220 °C,7 h,220.0,7.0,sulfanilic acid,p-phenylenediamine,water,,,,,606.0
+old_Em_20260803,5212:2369|or-cds,||2369||2369,220 °C,7 h,220.0,7.0,sulfanilic acid,p-phenylenediamine,water,,,,,606.0
+old_Em_20260803,5246:2382|bn-cds,||2382||2382,210 °C,8 h,210.0,8.0,citric acid,boric acid,ethylenediamine,water,,,,425.0
+old_Em_20260803,5255:2384|tmp-cds,||2384||2384,180 °C,12 h,180.0,12.0,"4-(4-aminophenyl)thiomorpholine-1,1-dioxide",ethanol,,,,,,520.0
+old_Em_20260803,5263:2388|mpd-cds,||2388||2388,180 °C,12 h,180.0,12.0,m-phenylenediamine,ethanol,,,,,,565.0
+old_Em_20260803,5264:2388|opd-cds,||2388||2388,200 °C,4 h,200.0,4.0,o-phenylenediamine,ethanol,,,,,,490.0
+old_Em_20260803,5284:2403|cds,||2403||2403,160 °C,3 h,160.0,3.0,citric acid,formamide,,,,,,634.0
+old_Em_20260803,5310:2422|laam gua- cds,||2422||2422,200°C,5 h,200.0,5.0,arginine,dopamine hydrochloride,water,,,,,525.0
+old_Em_20260803,5344:2436|egta-cds,||2436||2436,220 °C,12 h,220.0,12.0,acrylamide,ethylene glycol tetraacetic acid (egta),ammonium persulfate,water,,,,390.0
+old_Em_20260803,5397:2461|n-1-cds,||2461||2461,200 °C,10 h,200.0,10.0,3-methylaminophenol,ethanol,,,,,,543.0
+old_Em_20260803,5398:2461|n-2-cds,||2461||2461,200 °C,10 h,200.0,10.0,3-dimethylaminophenol,ethanol,,,,,,566.0
+old_Em_20260803,5399:2461|n-3-cds,||2461||2461,200 °C,10 h,200.0,10.0,8-hydroxyjulolidine,ethanol,,,,,,590.0
+old_Em_20260803,5430:243|cds-kan,||243||243,180 °C,6 h,180.0,6.0,kan,water,,,,,,425.0
+old_Em_20260803,5484:2499|ecds,||2499||2499,180 °C,8 h,180.0,8.0,m-(diethylamino)phenol,tridecanedioic acid,ethanol,,,,,485.0
+old_Em_20260803,5485:2499|mcds,||2499||2499,180 °C,8 h,180.0,8.0,m-(diethylamino)phenol,tridecanedioic acid,ethanol,,,,,490.0
+old_Em_20260803,5500:256|cds-1,||256||256,180 °C,2 h,180.0,2.0,m-aminophenol,tartaric acid,water,,,,,512.0
+old_Em_20260803,5501:256|cds-2,||256||256,180 °C,2 h,180.0,2.0,m-aminophenol,tartaric acid,water,,,,,513.0
+old_Em_20260803,5502:256|cds-3,||256||256,180 °C,2 h,180.0,2.0,m-aminophenol,tartaric acid,water,,,,,514.0
+old_Em_20260803,5505:257|cds-2,||257||257,180 °C,12 h,180.0,12.0,o-phenylenediamine,lysine,water,,,,,531.0
+old_Em_20260803,5506:257|cds-3,||257||257,180 °C,12 h,180.0,12.0,o-phenylenediamine,lysine,water,,,,,531.0
+old_Em_20260803,5509:259|cqds,||259||259,160 °C,12 h,160.0,12.0,citric acid,water,,,,,,450.0
+old_Em_20260803,5517:27|cds,||27||27,160 °C,12 h,160.0,12.0,hydroquinone,hydrazine,ethanol,water,,,,440.0
+old_Em_20260803,5520:265|cqds,||265||265,200 °C,9 h,200.0,9.0,citric acid,"1,5-diaminonaphthalene",ethanol,,,,,404.0
+old_Em_20260803,5526:269|cqds,||269||269,200 °C,5 h,200.0,5.0,citric acid,o-phenylenediamine,water,,,,,446.0
+old_Em_20260803,5560:290|cds,||290||290,160 °C,6 h,160.0,6.0,citric acid,urea,"n,n-diethylformamide (dmf)","n,n-diethylformamide",,,,654.0
+old_Em_20260803,5568:292|d-cys-cdots,||292||292,120 °C,16 h,120.0,16.0,d-cysteine,sodium hydroxide,water,,,,,410.0
+old_Em_20260803,5569:292|l-cys-cdots,||292||292,120 °C,16 h,120.0,16.0,cysteine,sodium hydroxide,water,,,,,410.0
+old_Em_20260803,5655:313|pncqds,||313||313,200 °C,5 h,200.0,5.0,citric acid,m-phenylenediamine,phosphoric acid,,,,,504.0
+old_Em_20260803,5657:315|green-emitting nitrogen-doped cds,||315||315,160 °C,12 h,160.0,12.0,citric acid,urea,"n,n-dimethylformamide",,,,,530.0
+old_Em_20260803,5714:330|c-cds,||330||330,180 °C,720 min,180.0,12.0,lysine,water,,,,,,415.0
+old_Em_20260803,5720:335|cds,||335||335,180 °C,2 h,180.0,2.0,tobias acid,water,,,,,,432.0
+old_Em_20260803,5723:336|cds,||336||336,180 °C,10 h,180.0,10.0,glucose,water,,,,,,530.0
+old_Em_20260803,5740:38|cds,||38||38,180 °C,4 h,180.0,4.0,melamine,l-cystine,water,,,,,542.0
+old_Em_20260803,5764:1686|o-cqds,||1686||1686,200 °C,3 h,200.0,3.0,p-phenylenediamine,"4,4'-bipyridine",ethylene glycol,,,,,603.0
+old_Em_20260803,5767:1686|y-cqds,||1686||1686,200 °C,3 h,200.0,3.0,p-phenylenediamine,"4,4'-bipyridine","1,2-propanediol",phosphoric acid,,,,547.0
+old_Em_20260803,5785:1727|r-cds,||1727||1727,200 °C,8 h,200.0,8.0,resazurin,sodium l-ascorbate,ethanol,,,,,606.0
+old_Em_20260803,5786:1730|g-cds,||1730||1730,180 °C,6 h,180.0,6.0,"2,4-diaminobenzenesulfonic acid",sulfuric acid,ethanol,,,,,534.0
+old_Em_20260803,5796:1740|yellow fluorescent carbon dots (cds),||1740||1740,200°C,8 h,200.0,8.0,o-phenylenediamine,water,,,,,,560.0
+old_Em_20260803,5797:1752|b-cds,||1752||1752,180 °C,8 h,180.0,8.0,theophylline,sodium hydroxide,water,,,,,394.0
+old_Em_20260803,5799:1780|gcds,||1780||1780,180 °C,12 h,180.0,12.0,p-phenylenediamine,urea,water,,,,,523.0
+old_Em_20260803,5800:1780|rcds,||1780||1780,180 °C,12 h,180.0,12.0,p-phenylenediamine,urea,ethanol,,,,,593.0
+old_Em_20260803,5801:1780|ycds,||1780||1780,180 °C,12 h,180.0,12.0,p-phenylenediamine,urea,"n,n-dimethylformamide",,,,,563.0
+old_Em_20260803,5821:1887|ap-cds,||1887||1887,220 °C,10 h,220.0,10.0,3-aminopropyltrimethoxysilane,phosphoric acid,water,,,,,432.0
+old_Em_20260803,"5824:1895|n, s-cds",||1895||1895,180 °C,5 h,180.0,5.0,"1,5-diaminonaphthalene",dl-aspartic acid,n-acetylcysteine,water,,,,545.0
+old_Em_20260803,5825:1895|n-cds,||1895||1895,180 °C,5 h,180.0,5.0,"1,5-diaminonaphthalene",dl-aspartic acid,water,,,,,430.0
+old_Em_20260803,5826:1917|rcds,||1917||1917,180 °C,6 hrs,180.0,6.0,8-aminoquinoline,citric acid,formamide,,,,,655.0
+old_Em_20260803,5841:1943|r-cds,||1943||1943,200 °C,10 h,200.0,10.0,"2,4-diaminodiphenylamine",thiourea,formamide,,,,,613.0
+old_Em_20260803,5842:1962|cqd1,||1962||1962,160 °C,6 h,160.0,6.0,citric acid,thiourea,"n,n-dimethylformamide",,,,,619.0
+old_Em_20260803,5843:1962|cqd_2,||1962||1962,160 °C,6 h,160.0,6.0,citric acid,thiourea,"n,n-dimethylformamide",,,,,635.0
+old_Em_20260803,5859:2020|m-cds,||2020||2020,200 °C,8 h,200.0,8.0,m-phenylenediamine,ethanol,,,,,,440.0
+old_Em_20260803,5865:2020|o-cds,||2020||2020,200 °C,8 h,200.0,8.0,o-phenylenediamine,ethanol,,,,,,550.0
+old_Em_20260803,5871:2020|p-cds,||2020||2020,200 °C,8 h,200.0,8.0,p-phenylenediamine,ethanol,,,,,,610.0
+old_Em_20260803,5894:2043|cds-ht,||2043||2043,200 °C,14 h,200.0,14.0,"2,7-dioxynaphthalene",citric acid,water,,,,,527.0
+old_Em_20260803,5911:2087|lp-rcds,||2087||2087,160 °C,12 h,160.0,12.0,proline,o-phenylenediamine,water,phosphoric acid,,,,620.0
+old_Em_20260803,5912:2087|lp-ycds,||2087||2087,180 °C,12 h,180.0,12.0,proline,o-phenylenediamine,water,,,,,560.0
+old_Em_20260803,5957:2178|g-cds,||2178||2178,220 °C,12 h,220.0,12.0,o-phenylenediamine,ethanol,"n,n-dimethylformamide",,,,,540.0
+old_Em_20260803,5963:2195|trp cds,||2195||2195,200 °C,14 h,200.0,14.0,tryptophan,water,,,,,,442.0
+old_Em_20260803,6050:2270|n-cds,||2270||2270,150 °C,8 h,150.0,8.0,melamine,o-phenylenediamine,"n,n-dimethylformamide",,,,,522.0
+old_Em_20260803,"6081:2307|n, s-cds (ethanol solvent)",||2307||2307,180 °C,6 h,180.0,6.0,"2,7-dioxynaphthalene",thiourea,ethanol,,,,,575.0
+old_Em_20260803,"6083:2307|n, s-cds (methanol solvent)",||2307||2307,180 °C,6 h,180.0,6.0,"2,7-dioxynaphthalene",thiourea,methanol,,,,,575.0
+old_Em_20260803,6084:2307|undoped cds (acetone solvent),||2307||2307,180 °C,6 h,180.0,6.0,"2,7-dioxynaphthalene",acetone,,,,,,445.0
+old_Em_20260803,6085:2307|undoped cds (chloroform solvent),||2307||2307,180 °C,6 h,180.0,6.0,"2,7-dioxynaphthalene",chloroform,,,,,,445.0
+old_Em_20260803,6086:2307|undoped cds (ethanol solvent),||2307||2307,180 °C,6 h,180.0,6.0,"2,7-dioxynaphthalene",ethanol,,,,,,445.0
+old_Em_20260803,6088:2307|undoped cds (methanol solvent),||2307||2307,180 °C,6 h,180.0,6.0,"2,7-dioxynaphthalene",methanol,,,,,,445.0
+old_Em_20260803,6104:2393|r-cds,||2393||2393,200 °C,24 h,200.0,24.0,p-phenylenediamine,ethanol,,,,,,515.0
+old_Em_20260803,6108:2427|1 cds,||2427||2427,200 °C,7 h,200.0,7.0,"1,10-phenanthroline-5-amine (aphen)",citric acid,water,,,,,453.0
+old_Em_20260803,6109:2427|2 cds,||2427||2427,200 °C,7 h,200.0,7.0,"1,10-phenanthroline-5-amine (aphen)",citric acid,"n,n-dimethylformamide",,,,,515.0
+old_Em_20260803,6110:2427|3 cds,||2427||2427,200 °C,7 h,200.0,7.0,"1,10-phenanthroline-5-amine (aphen)",glucose,"n,n-dimethylformamide",,,,,510.0
+old_Em_20260803,6145:2513|ocds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2513||2513,200 °C,12 h,200.0,12.0,rhodamine b,ptcda,ethanol,,,,,575.0
+old_Em_20260803,6146:2513|rcds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2513||2513,200 °C,12 h,200.0,12.0,rhodamine b,o-phenylenediamine,ethanol,,,,,615.0
+old_Em_20260803,"6162:2532|b, n-cds",/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2532||2532,180°C,5 h,180.0,5.0,"2,5-dihydroxyterephthalic acid",3-thiopheneboronic acid,"n,n-dimethylformamide",,,,,525.0
+old_Em_20260803,6203:2543|cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2543||2543,200 °C,10 h,200.0,10.0,citric acid,water,,,,,,445.0
+old_Em_20260803,6215:2547|oa-5,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2547||2547,180 °C,10.0 h,180.0,10.0,o-phenylenediamine,2-aminophenol,sulfuric acid,,,,,647.0
+old_Em_20260803,6226:2551|cqds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2551||2551,160 °C,6 h,160.0,6.0,cysteine,tryptophan,water,,,,,445.0
+old_Em_20260803,6230:2554|ycds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2554||2554,180 °C,12 h,180.0,12.0,"1,5-naphthalenediamine",sulfuric acid,tert-butyl hydroperoxide,"n,n-dimethylformamide",,,,540.0
+old_Em_20260803,6284:2585|te-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2585||2585,200 °C,6 h; 30 min (sonication),200.0,6.0,o-phenylenediamine,4-vinylphenylboronic acid,"n,n-dimethylformamide",,,,,521.0
+old_Em_20260803,6297:2592|b-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2592||2592,180 °C,6 h,180.0,6.0,citric acid,asparagine,water,,,,,425.0
+old_Em_20260803,6298:2592|y-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2592||2592,180 °C,6 h,180.0,6.0,citric acid,asparagine,"2,5-diaminobenzenesulfonic acid",water,,,,525.0
+old_Em_20260803,"6302:2596|n,f-cds",/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2596||2596,180 °C,24 h,180.0,24.0,tetrafluoroterephthalic acid,tetraethylenepentamine,water,,,,,497.0
+old_Em_20260803,6351:2614|a-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2614||2614,180 °C,8 h,180.0,8.0,adenosine,water,,,,,,415.0
+old_Em_20260803,6352:2615|ae-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2615||2615,180 °C,3 h,180.0,3.0,citric acid,cysteine,water,,,,,440.0
+old_Em_20260803,6354:2615|oe-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2615||2615,180 °C,3 h,180.0,3.0,citric acid,cysteine,water,,,,,440.0
+old_Em_20260803,6367:2621|yellow-emitting cds (y-cds),/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2621||2621,180 °C,8 h,180.0,8.0,3-apba,tyrosine,o-phenylenediamine,methanol,,,,540.0
+old_Em_20260803,6384:2625|b-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2625||2625,160 °C,16 h,160.0,16.0,"2,4-diaminobenzenesulfonic acid",water,,,,,,520.0
+old_Em_20260803,6385:2625|g-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2625||2625,160 °C,16 h,160.0,16.0,"3,5-diamino-2,4,6-trimethylbenzenesulfonic acid",water,,,,,,507.0
+old_Em_20260803,6430:2644|c-dots,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2644||2644,160 °C,8 h,160.0,8.0,glutathione,folic acid,formamide,,,,,683.0
+old_Em_20260803,6446:2647|n-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2647||2647,160 °C,10 h,160.0,10.0,melamine,o-phenylenediamine,"n,n-dimethylformamide",,,,,533.0
+old_Em_20260803,6486:2655|y-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2655||2655,200 °C,10 h,200.0,10.0,phthalic acid,o-phenylenediamine,water,"n,n-dimethylformamide",,,,570.0
+old_Em_20260803,6496:2664|ureaphen f6,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2664||2664,160 °C,10 h,160.0,10.0,urea,p-phenylenediamine,water,,,,,550.0
+old_Em_20260803,6498:2665|r-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2665||2665,180 °C,10 h,180.0,10.0,rohitukine,water,,,,,,471.0
+old_Em_20260803,6506:2667|sicd-1,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2667||2667,160 °C,4 h,160.0,4.0,citric acid,urea,3-glycidyloxypropyltrimethoxysilane (gptms),water,,,,430.0
+old_Em_20260803,6507:2667|sicd-10,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2667||2667,160 °C,4 h,160.0,4.0,citric acid,urea,3-glycidyloxypropyltrimethoxysilane (gptms),water,,,,430.0
+old_Em_20260803,6522:2674|cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2674||2674,200 °C,8 h,200.0,8.0,citric acid,triethanolamine,water,,,,,430.0
+old_Em_20260803,6523:2675|d-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2675||2675,80 °C,36 h,80.0,36.0,d-cysteine,water,,,,,,519.0
+old_Em_20260803,6524:2675|l-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2675||2675,80 °C,36 h,80.0,36.0,cysteine,water,,,,,,516.0
+old_Em_20260803,6526:2676|red-emissive cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2676||2676,200 °C,10 h,200.0,10.0,o-phenylenediamine,potassium chloride,ethanol,water,,,,570.0
+old_Em_20260803,6527:2677|f-ncds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2677||2677,180 °C,48 h,180.0,48.0,"2,4-difluorobenzoic acid",glycine,water,,,,,505.0
+old_Em_20260803,"6530:2679|f, n-cds",/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2679||2679,200 °C,8 h,200.0,8.0,fleroxacin,ethanol,,,,,,440.0
+old_Em_20260803,6683:2724|g-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2724||2724,200 °C,10 h,200.0,10.0,succinic acid,m-phenylenediamine,ethanol,,,,,510.0
+old_Em_20260803,6712:2737|r-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2737||2737,180 °C,8 h,180.0,8.0,p-phenylenediamine,d-sorbitol,water,,,,,633.0
+old_Em_20260803,6832:2786|ca-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2786||2786,200 °C,12 h,200.0,12.0,citric acid,water,,,,,,455.0
+old_Em_20260803,6873:2806|f-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2806||2806,220 °C,7 h,220.0,7.0,sorbic acid,ammonium fluoride,ethanol,,,,,492.0
+old_Em_20260803,"6875:2808|n,s-cds",/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2808||2808,180 °C,8 h,180.0,8.0,ribavirin,thiourea,water,,,,,456.0
+old_Em_20260803,6889:2819|cds-amp,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2819||2819,190 °C,8 h,190.0,8.0,citric acid,2-amino-2-methyl-1-propanol,"n,n-dimethylformamide",,,,,415.0
+old_Em_20260803,6969:2854|y-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2854||2854,200 °C,8 h,200.0,8.0,o-phenylenediamine,tris(hydroxymethyl)aminomethane,water,,,,,564.0
+old_Em_20260803,6996:2865|n-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2865||2865,180°C,8 h,180.0,8.0,"2,4-dihydroxybenzaldehyde","1,2,4,5-benzenetetraamine tetrahydrochloride",water,,,,,490.0
+old_Em_20260803,7016:2874|cqds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2874||2874,180 °C,4 h,180.0,4.0,tetrabromophthalic anhydride,ethylenediamine,"n,n-dimethylformamide",,,,,520.0
+old_Em_20260803,7018:2876|n-cqds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2876||2876,200 °C,5 h,200.0,5.0,citric acid,ethylenediamine,water,,,,,445.0
+old_Em_20260803,"7022:2878|n,p-cds",/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2878||2878,180 °C,8 h,180.0,8.0,triphenylphosphine,ethylenediamine,acetic acid,ethanol,,,,410.0
+old_Em_20260803,7067:2895|rcds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2895||2895,180 °C,6 h,180.0,6.0,o-phenylenediamine,semicarbazide,water,,,,,610.0
+old_Em_20260803,"7080:2908|s,n-cqds",/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2908||2908,180 °C,8 h,180.0,8.0,uridine,cysteine,water,,,,,455.0
+old_Em_20260803,7094:2915|umb-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2915||2915,200°C,4 h,200.0,4.0,umbelliferone (umb),ethylene glycol,,,,,,447.0
+old_Em_20260803,7102:2918|sample 4 (1 g malic acid-5 g oxalic acid),/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2918||2918,180 °C,2 hours,180.0,2.0,malic acid,oxalic acid,water,,,,,477.0
+old_Em_20260803,"7110:2920|n,s-cqds",/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2920||2920,205°C,210 min,205.0,3.5,succinic acid,cysteine,water,,,,,445.0
+old_Em_20260803,7162:2947|gly-ncds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2947||2947,200 °C,12 h,200.0,12.0,glycine,water,,,,,,425.0
+old_Em_20260803,7174:2951|b-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2951||2951,180 °C,6 h,180.0,6.0,"2,3-diaminonaphthalene",hydrogen peroxide,water,,,,,440.0
+old_Em_20260803,7176:2953|m-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2953||2953,200 °C,10 h,200.0,10.0,o-phenylenediamine,pentyltriphenylphosphonium bromide,rhodamine b,ethanol,,,,572.0
+old_Em_20260803,7184:2956|cef-cd,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2956||2956,180 °C,6 h,180.0,6.0,citric acid,ethylenediamine,formamide,,,,,630.0
+old_Em_20260803,7223:2971|r-cqds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2971||2971,180 °C,12 h,180.0,12.0,citric acid,thiourea,"n,n-dimethylformamide",,,,,605.0
+old_Em_20260803,7224:2971|y-cqds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2971||2971,180 °C,12 h,180.0,12.0,citric acid,thiourea,"n,n-dimethylformamide",,,,,545.0
+new_empty_amount_allowed_20260804,7:341|cpds 1,||341||341,160 °C,4 h,160.0,4.0,citric acid,tris(2-aminoethyl)amine (taea),,,,,,445.0
+new_empty_amount_allowed_20260804,51:362|mcd,||362||362,180 °C,12 hours,180.0,12.0,m-phenylenediamine,ethanol,,,,,,490.0
+new_empty_amount_allowed_20260804,52:362|ocd,||362||362,180 °C,12 hours,180.0,12.0,o-phenylenediamine,ethanol,,,,,,570.0
+new_empty_amount_allowed_20260804,53:362|pcd,||362||362,180 °C,12 hours,180.0,12.0,p-phenylenediamine,ethanol,,,,,,635.0
+new_empty_amount_allowed_20260804,118:391|ca-ba,||391||391,200 °C,5 h,200.0,5.0,citric acid,boric acid,water,,,,,430.0
+new_empty_amount_allowed_20260804,119:391|tb-ba,||391||391,200 °C,5 h,200.0,5.0,triisopropyl borate,boric acid,water,,,,,420.0
+new_empty_amount_allowed_20260804,170:407|r-egp-cqds-net2,||407||407,200 °C,12 h,200.0,12.0,p-phenylenediamine,"n,n-dimethylformamide",,,,,,620.0
+new_empty_amount_allowed_20260804,469:546|eu-cqds,||546||546,200 °C,2 h,200.0,2.0,citric acid,eu2o3,water,,,,,425.0
+new_empty_amount_allowed_20260804,629:68|cds,||68||68,160 °C,6 h,160.0,6.0,citric acid,urea,"n,n-dimethylformamide",,,,,532.0
+new_empty_amount_allowed_20260804,675:642|b-cds,||642||642,160°C,2 h,160.0,2.0,citric acid,urea,boric acid,water,,,,425.0
+new_empty_amount_allowed_20260804,744:660|ncds,||660||660,240 °C,4 h,240.0,4.0,citric acid,fluorescein,ethylenediamine,water,,,,447.0
+new_empty_amount_allowed_20260804,745:661|ncds,||661||661,180°C,6 hours,180.0,6.0,folic acid,water,,,,,,440.0
+new_empty_amount_allowed_20260804,875:703|cds-oh,||703||703,260 °C,5 h,260.0,5.0,phloroglucinol,phenol,water,,,,,547.0
+new_empty_amount_allowed_20260804,1002:752|t-scqds,||752||752,200 °C,8 h,200.0,8.0,glucose,glycine,tryptophan,water,,,,450.0
+new_empty_amount_allowed_20260804,1309:846|n-cds,||846||846,180 °C,4 h,180.0,4.0,3-aminobenzoic acid,water,,,,,,405.0
+new_empty_amount_allowed_20260804,1540:918|cqds,||918||918,200 °C,6 h,200.0,6.0,citric acid,ethylenediamine,water,,,,,450.0
+new_empty_amount_allowed_20260804,1957:1077|n-cds (mpd-hcl),||1077||1077,150 °C,8 h,150.0,8.0,m-phenylenediamine,hydrochloric acid,water,,,,,510.0
+new_empty_amount_allowed_20260804,1962:1077|n-cds (ppd-hcl),||1077||1077,150 °C,8 h,150.0,8.0,p-phenylenediamine,hydrochloric acid,water,,,,,600.0
+new_empty_amount_allowed_20260804,1974:1081|ncds,||1081||1081,200°C,6 h,200.0,6.0,pyromellitic acid,ethylenediamine,water,,,,,484.0
+new_empty_amount_allowed_20260804,2144:1128|l-cysteine-glucose cds,||1128||1128,180 °C,6 h,180.0,6.0,cysteine,glucose,water,,,,,410.0
+new_empty_amount_allowed_20260804,"2182:1140|s,n-cds",||1140||1140,160 °C,6 h,160.0,6.0,citric acid,thiourea,water,,,,,440.0
+new_empty_amount_allowed_20260804,2364:1202|g-cds,||1202||1202,180 °C,2 h,180.0,2.0,m-phenylenediamine,sulfuric acid,ethanol,,,,,510.0
+new_empty_amount_allowed_20260804,2492:1241|meg cqds,||1241||1241,180 °C,24 h,180.0,24.0,ethylene glycol,,,,,,,359.0
+new_empty_amount_allowed_20260804,"2761:14|n, s-cds",||14||14,150 °C,12 h,150.0,12.0,malic acid,cysteine,ethylenediamine,water,,,,445.0
+new_empty_amount_allowed_20260804,2830:1357|n-cds-f,||1357||1357,180 °C,4 h,180.0,4.0,citric acid,urea,ammonium fluoride,"n,n-dimethylformamide",,,,658.0
+new_empty_amount_allowed_20260804,2978:1417|r-cds,||1417||1417,160°C,6h,160.0,6.0,citric acid,urea,"n,n-dimethylformamide",,,,,620.0
+new_empty_amount_allowed_20260804,3506:203|y-cds,||203||203,180 °C,12 h,180.0,12.0,o-phenylenediamine,urea,ethanol,,,,,565.0
+new_empty_amount_allowed_20260804,3699:1700|genistein-c-dots,||1700||1700,180 °C,8 h,180.0,8.0,genistein,ethylenediamine,sodium hydroxide,,,,,500.0
+new_empty_amount_allowed_20260804,3713:1709|cur-cds,||1709||1709,200 °C,8 h,200.0,8.0,curcumin,ethylenediamine,water,,,,,520.0
+new_empty_amount_allowed_20260804,3945:1807|tocds,||1807||1807,180°C,24 h,180.0,24.0,o-phenylenediamine,d-threonine,water,,,,,560.0
+new_empty_amount_allowed_20260804,4040:216|b-cds,||216||216,180°C,5 h,180.0,5.0,gallic acid,ethylenediamine,"n,n-dimethylformamide",,,,,426.0
+new_empty_amount_allowed_20260804,4352:2006|g-cqds,||2006||2006,160 °C,6 h,160.0,6.0,citric acid,thiourea,glycerol,,,,,531.0
+new_empty_amount_allowed_20260804,4353:2006|r-cqds,||2006||2006,160 °C,6 h,160.0,6.0,citric acid,thiourea,"n,n-dimethylformamide",,,,,626.0
+new_empty_amount_allowed_20260804,4354:2006|y-cqds,||2006||2006,160 °C,6 h,160.0,6.0,citric acid,thiourea,"n,n-dimethylformamide",glycerol,,,,574.0
+new_empty_amount_allowed_20260804,4435:2033|cds-11,||2033||2033,190 °C,9 h,190.0,9.0,mannose,histidine,water,,,,,430.0
+new_empty_amount_allowed_20260804,4469:2049|gcds,||2049||2049,200 °C,10 h,200.0,10.0,trimellitic acid (tmla),o-phenylenediamine,ethanol,,,,,507.0
+new_empty_amount_allowed_20260804,4470:2049|rcds,||2049||2049,200 °C,10 h,200.0,10.0,trimellitic acid (tmla),o-phenylenediamine,ethanol,,,,,612.0
+new_empty_amount_allowed_20260804,"4814:2186|cds (1:3, 200 °c)",||2186||2186,200 °C,14 hours,200.0,14.0,citric acid,urea,water,,,,,440.0
+new_empty_amount_allowed_20260804,4861:2213|cds 5 (r-cds),||2213||2213,180 °C,8 h,180.0,8.0,ethylenediaminetetraacetic acid,melamine,water,,,,,410.0
+new_empty_amount_allowed_20260804,4868:2216|cdms,||2216||2216,220 °C,6 h,220.0,6.0,3-hydroxy-2-naphthoic acid,"n,n-dimethylformamide",,,,,,518.0
+new_empty_amount_allowed_20260804,4871:2218|n-cds,||2218||2218,180 °C,12 h,180.0,12.0,glucosamine,water,,,,,,380.0
+new_empty_amount_allowed_20260804,5241:2379|l-cds,||2379||2379,200 °C,8 h,200.0,8.0,tryptophan,cyanidin cation (cc),water,,,,,445.0
+new_empty_amount_allowed_20260804,5497:253|cds,||253||253,200 °C,5 h,200.0,5.0,citric acid,ethylenediamine,water,,,,,450.0
+new_empty_amount_allowed_20260804,5837:1932|cds-ii,||1932||1932,180 °C,12 h,180.0,12.0,"biphenyl-3,3',5,5'-tetracarboxylic acid","n,n-dimethylformamide",,,,,,430.0
+new_empty_amount_allowed_20260804,5904:2072|r-cds-2,||2072||2072,200 °C,5 h,200.0,5.0,resorcinol,hydrochloric acid,ethanol,,,,,540.0
+new_empty_amount_allowed_20260804,5905:2080|cd_1,||2080||2080,200 °C,6 h,200.0,6.0,cysteine,sulfuric acid,ammonia,water,,,,440.0
+new_empty_amount_allowed_20260804,5906:2080|cd_2,||2080||2080,200 °C,6 h,200.0,6.0,cysteine,ammonium persulfate,ammonia,water,,,,440.0
+new_empty_amount_allowed_20260804,5907:2080|n-cd_1,||2080||2080,200 °C,6 h,200.0,6.0,cysteine,citric acid,sulfuric acid,ammonia,water,,,531.0
+new_empty_amount_allowed_20260804,5908:2080|n-cd_2,||2080||2080,200 °C,6 h,200.0,6.0,cysteine,citric acid,ammonium persulfate,ammonia,water,,,504.0
+new_empty_amount_allowed_20260804,5967:2198|y-cds,||2198||2198,180 °C,5 h,180.0,5.0,catechol,o-phenylenediamine,water,,,,,570.0
+new_empty_amount_allowed_20260804,6031:2223|yb/gd-cds,||2223||2223,160 °C,4 h,160.0,4.0,gd(no3)3,yb(no3)3,citric acid,urea,water,,,500.0
+new_empty_amount_allowed_20260804,6034:2228|bnp-cds200 6,||2228||2228,200 °C,6 h,200.0,6.0,diethylenetriamine,boric acid,phosphoric acid,acrylic acid,water,,,546.0
+new_empty_amount_allowed_20260804,6035:2228|bnp-cds200 8,||2228||2228,200 °C,8 h,200.0,8.0,diethylenetriamine,boric acid,phosphoric acid,acrylic acid,water,,,475.0
+new_empty_amount_allowed_20260804,6036:2228|bnp-cds220 6,||2228||2228,220 °C,6 h,220.0,6.0,diethylenetriamine,boric acid,phosphoric acid,acrylic acid,water,,,549.0
+new_empty_amount_allowed_20260804,6040:2228|bnp-cds_442g_scale,||2228||2228,200 °C,12 h,200.0,12.0,diethylenetriamine,boric acid,phosphoric acid,acrylic acid,water,,,475.0
+new_empty_amount_allowed_20260804,6111:2427|4 cds,||2427||2427,200 °C,7 h,200.0,7.0,urea,citric acid,"n,n-dimethylformamide",,,,,535.0
+new_empty_amount_allowed_20260804,6112:2427|5 cds,||2427||2427,200 °C,7 h,200.0,7.0,p-phenylenediamine,"n,n-dimethylformamide",,,,,,587.0
+new_empty_amount_allowed_20260804,6123:2475|fcns,||2475||2475,180 °C,24 h,180.0,24.0,m-phenylenediamine,ethanol,,,,,,494.0
+new_empty_amount_allowed_20260804,"6148:2514|cqds (2-ap/ca ratio 2:1, 140 °c, 8 h)",/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2514||2514,140 °C,8 h,140.0,8.0,2-aminophenol,citric acid,water,,,,,412.0
+new_empty_amount_allowed_20260804,6164:2533|s-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2533||2533,180 °C,10 h,180.0,10.0,"1,8-naphthalic anhydride","(s,s)-dach",,,,,,450.0
+new_empty_amount_allowed_20260804,6290:2589|cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2589||2589,160 °C,8 h,160.0,8.0,glutathione,formamide,,,,,,686.0
+new_empty_amount_allowed_20260804,6427:2642|cds(bpa),/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2642||2642,220 °C,12 h,220.0,12.0,bisphenol a (bpa),ethylenediamine,ethanol,,,,,460.0
+new_empty_amount_allowed_20260804,6428:2642|cds(bpaf),/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2642||2642,220 °C,12 h,220.0,12.0,bisphenol af (bpaf),ethylenediamine,ethanol,,,,,450.0
+new_empty_amount_allowed_20260804,6429:2642|cds(bpf),/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2642||2642,220 °C,12 h,220.0,12.0,bisphenol f (bpf),ethylenediamine,ethanol,,,,,440.0
+new_empty_amount_allowed_20260804,6532:2682|cqd-1,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2682||2682,180 °C,12 h,180.0,12.0,anthraflavic acid,cysteine,,,,,,520.0
+new_empty_amount_allowed_20260804,6533:2682|cqd-2,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2682||2682,180 °C,12 h,180.0,12.0,"1,4-diaminoanthraquinone",cysteine,,,,,,500.0
+new_empty_amount_allowed_20260804,6534:2682|cqd-3,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2682||2682,180 °C,12 h,180.0,12.0,"1,5-diamino-4,3-dihydroxy anthraquinone (n/a)",cysteine,,,,,,440.0
+new_empty_amount_allowed_20260804,6826:2783|ca100,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2783||2783,230 °C,10 h,230.0,10.0,citric acid,ethylenediamine,"n,n-dimethylformamide",water,,,,440.0
+new_empty_amount_allowed_20260804,"6918:2831|se-gqds (hydrothermal, 25% wt ratio, sediment)",/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2831||2831,200°C,6 hr,200.0,6.0,citric acid,sodium selenite,water,,,,,520.0
+new_empty_amount_allowed_20260804,6954:2845|g-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2845||2845,160°C,6 h,160.0,6.0,serine,o-phenylenediamine,boric acid,ethanol,,,,527.0
+new_empty_amount_allowed_20260804,6955:2845|r-cds,/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2845||2845,160°C,6 h,160.0,6.0,serine,o-phenylenediamine,hydrochloric acid,ethanol,,,,592.0
+new_empty_amount_allowed_20260804,"7076:2904|b, n-cds",/media/user/移动硬盘备份/文件召回/批量全量提取/2025-2026/mining||2904||2904,180 °C,10 h,180.0,10.0,3-aminophenylboronic acid,water,,,,,,373.0
