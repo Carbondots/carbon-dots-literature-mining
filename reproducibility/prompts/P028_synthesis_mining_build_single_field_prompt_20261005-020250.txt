@@ -1,0 +1,95 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P028
+# source_file: synthesis_mining/09_llm_fill_review_fields.py
+# source_lines: 77-163
+# function: build_single_field_prompt
+# parameters: cd_name: str, column: str, cd_desc: str, context_text: str, raw_values: list, current_value: str, step10_hints: list | None=None
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_single_field_prompt(
+    cd_name: str,
+    column: str,
+    cd_desc: str,
+    context_text: str,
+    raw_values: list,
+    current_value: str,
+    step10_hints: list | None = None,
+) -> str:
+    field_rule = make_field_rule(column)
+    hint_lines = []
+    for idx, hint in enumerate((step10_hints or [])[:5], start=1):
+        if not isinstance(hint, dict):
+            continue
+        issue_code = str(hint.get("issue_code", "")).strip() or "soft_invalid"
+        reason = str(hint.get("reason", "")).strip()
+        bad_value = str(hint.get("bad_value", "")).strip()
+        subject_value = str(hint.get("subject_value", "")).strip()
+        hint_text = str(hint.get("hint_text", "")).strip()
+        attempt_index = hint.get("attempt_index")
+        extraction_index = hint.get("extraction_index")
+        meta = []
+        if extraction_index not in (None, ""):
+            meta.append(f"extraction={extraction_index}")
+        if attempt_index not in (None, ""):
+            meta.append(f"attempt={attempt_index}")
+        prefix = f"- Hint {idx}"
+        if meta:
+            prefix += f" ({', '.join(meta)})"
+        detail_parts = [f"code={issue_code}"]
+        if subject_value:
+            detail_parts.append(f"subject={subject_value}")
+        if bad_value:
+            detail_parts.append(f"bad_value={bad_value}")
+        if reason:
+            detail_parts.append(f"reason={reason}")
+        if hint_text:
+            detail_parts.append(f"guidance={hint_text}")
+        hint_lines.append(prefix + ": " + "; ".join(detail_parts))
+
+    hint_block = ""
+    if hint_lines:
+        hint_block = "\n# Upstream soft-validation hints (warnings only)\n" + "\n".join(hint_lines) + "\n"
+
+    return f"""You are a careful research assistant for carbon dot (CD) synthesis.
+
+# CD to locate (read this FIRST)
+- CD name: {cd_name}
+- CD description (use ONLY to find the right paragraph; do NOT copy values from it):
+  {cd_desc}
+
+# Paper context (the ONLY source of truth)
+====================
+{context_text}
+====================
+
+# TASK (ONE FIELD ONLY)
+Extract **ONLY** the value for column **"{column}"** for the CD named **{cd_name}** from the context above.
+- If the answer is not clearly stated in the context, return "N/A".
+- Do **NOT** infer or invent numbers/units.
+- Preserve the paper's original wording when explicit. Do not drop Greek letters, stereo descriptors, descriptive prefixes, or other leading modifiers.
+- If the paper uses a percentage or ratio, keep that percentage/ratio format. Do not convert it into mass, moles, molarity, or another unit unless the paper explicitly gives that converted value.
+- Preserve the quantitative frame used for the current sample. If the current sample is defined by mol%, wt%, or ratio, do not borrow another sample's mM/mmol/mg values to rewrite it into a different unit system.
+- All fields other than `Purification` must describe only precursor handling before reaction and the reaction itself. Do NOT use cooling, standing, washing, rinsing, extraction, dialysis, centrifugation, filtration, drying, elution, or re-dispersion as synthesis-stage values for these fields.
+- Only treat true synthesis-stage reaction steps as multi-step synthesis. Do NOT create extra `step2`/`step3` labels for cooling, workup, or purification.
+- If multiple sequential synthesis-stage reaction steps are explicitly described, format the answer as `step1: ...; step2: ...; step3: ...` in chronological order.
+- Answer should be **one concise line**.
+
+# Field-specific rule
+{field_rule}
+
+# Prior attempts (for awareness; DO NOT trust them blindly)
+- Current merged value: {current_value}
+- Three extractions: {raw_values}
+{hint_block}
+
+# STRICT OUTPUT (JSON ONLY)
+Return **valid JSON** with exactly ONE key and ONE value.
+The key must be **exactly**: "{column}"
+
+Example (shape only):
+{{
+  "{column}": "<your answer or N/A>"
+}}
+
+No extra text. No markdown fences. No additional keys.
+"""

@@ -1,0 +1,8 @@
+document_section,source_file,source_lines,evidence_status
+Repository overview and run order,README.md; preprocess/README.md; synthesis_mining/README.md; property_mining/README.md,README.md:1-40; preprocess/README.md:1-45; synthesis_mining/README.md:1-53; property_mining/README.md:1-65,verified
+Preprocess sentence schema,preprocess/04_tokenize_markdown.py,493-538,verified
+Synthesis export schema,synthesis_mining/synthesis_unit.py,10-29,verified
+Property export schema and mappings,property_mining/14_export_property_letter_table.py,48-172,verified
+Property annotation and paragraph-window logic,property_mining/property_unit.py,1136-1475,verified
+Prompt source templates,synthesis_mining/*.py; property_mining/*.py,see prompt_catalog,verified-source-template; no model calls
+Downstream ML separation,mining_ML_Em/code/train_extra_oof.py; mining_ML_Em/code/calculate_r2.py,"train_extra_oof.py:44-67,141-207; calculate_r2.py:1-90",verified source only

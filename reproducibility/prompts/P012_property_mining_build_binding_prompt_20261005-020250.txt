@@ -1,0 +1,56 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P012
+# source_file: property_mining/09_llm_bind_app_vs_samples.py
+# source_lines: 280-327
+# function: build_binding_prompt
+# parameters: *, kind: str, tag: str, header_sample: str, current_sentence: str, evidence_text: str, candidates: Sequence[SampleInfo]
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_binding_prompt(
+    *,
+    kind: str,
+    tag: str,
+    header_sample: str,
+    current_sentence: str,
+    evidence_text: str,
+    candidates: Sequence[SampleInfo],
+) -> str:
+    sample_hint = str(header_sample or "").strip() or "(no reliable sample hint)"
+    return f"""You are binding ONE property statement from a carbon-dot paper to the correct sample or samples from THIS paper only.
+
+Output exactly ONE JSON object and then {END_SENTINEL}. Do not output any other text.
+
+Allowed schema:
+{{"scope":"none|single|multi|family","samples":["sampleA","sampleB"]}}{END_SENTINEL}
+
+Definitions:
+- "none": the evidence does not support any sample from this paper.
+- "single": the evidence supports exactly one concrete candidate sample.
+- "multi": the evidence supports multiple concrete candidate samples.
+- "family": the evidence is about a series, group, or generic label and cannot be safely bound to concrete candidates.
+
+Rules:
+- Use ONLY sample names from the candidate list.
+- If multiple concrete candidates are explicitly supported, return ALL of them in the listed order.
+- Do not guess a specific candidate from a generic label such as "CDs" or "carbon dots".
+- Prefer "family" over guessing when the evidence is series-level or ambiguous.
+- Some candidate names may denote a whole series rather than a single member. Use scope="family" when the evidence discusses the series as a whole, or when the evidence does not provide enough unique identifiers to bind to specific member names from the candidate list.
+- If the evidence explicitly mentions specific member names from the candidate list, use scope="single" or "multi" and list all mentioned member names; do not use "family".
+- If the candidate names differ by precursor, dopant, ratio, reaction condition, or another synthesis variable, but the evidence only uses a generic label or only mentions part of the varying information, do not guess a concrete member. Prefer scope="family".
+- A generic label is not sufficient to bind to one specific candidate, even if that candidate name contains the same substring. Bind to a specific candidate only when the evidence explicitly mentions that candidate's unique identifier, or enough parameters from the candidate description to make the match unique.
+- For application sentences, do not output scope="none" just because the sentence describes an application scenario. Bind to specific candidates only if uniquely identified; otherwise use scope="family".
+- Completeness rule: if the evidence mentions more than one candidate sample, the output must include every mentioned candidate sample in "samples".
+- You MUST NOT output scope="single" or scope="multi" with an empty "samples" array.
+
+Inputs:
+- source_kind = "{kind}"
+- property_tag = "{tag}"
+- header_sample_hint = "{sample_hint}"
+- current_sentence = "{current_sentence}"
+
+Evidence:
+{evidence_text}
+
+Candidate samples:
+{build_candidate_block(candidates)}
+""".strip()

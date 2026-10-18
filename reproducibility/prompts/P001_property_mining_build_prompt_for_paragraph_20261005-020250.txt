@@ -1,0 +1,105 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P001
+# source_file: property_mining/02_label_property_text.py
+# source_lines: 62-158
+# function: build_prompt_for_paragraph
+# parameters: paper_title: str, para_id: str, current_sections: Sequence[str], para_rows_all: pd.DataFrame, para_rows_candidates: pd.DataFrame, prompt_trunc: int
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_prompt_for_paragraph(
+    paper_title: str,
+    para_id: str,
+    current_sections: Sequence[str],
+    para_rows_all: pd.DataFrame,
+    para_rows_candidates: pd.DataFrame,
+    prompt_trunc: int,
+) -> str:
+    sec_str = ", ".join(str(s) for s in current_sections if str(s).strip()) or "N/A"
+    header = dedent(
+        f"""
+        You are an expert scientific editor for materials papers.
+
+        TASK:
+        Review ONE paragraph below. Some candidate sentences currently have section labels limited to
+        intro / ignore / unknown. Decide whether each candidate sentence should be reassigned to a
+        different `main_section_norm`.
+
+        DECISION CRITERIA:
+        Allowed target sections:
+        - abstract:
+          concise abstract-style summary of THIS paper's own work, often near the paper beginning;
+          may state key synthesis route, main emission/QY/lifetime values, sensing performance, etc.
+          If front-matter noise like "ACCESS Metrics", "Supporting Information", or similar appears
+          before "ABSTRACT", but the sentence itself is clearly part of the abstract summary, label it abstract.
+        - intro:
+          background, motivation, prior literature, or general overview not reporting this paper's own
+          standalone methods/results as a section sentence.
+        - methods:
+          materials, synthesis/preparation, instrumentation, measurement setup, or experimental procedure.
+        - results_discussion:
+          THIS paper's own measured properties, findings, performance, mechanisms, or interpretations.
+        - conclusion:
+          explicit closing summary/outlook/concluding statements.
+        - ignore:
+          access metrics, article information, keywords, supporting information labels, acknowledgements,
+          references, pure front-matter noise, or other non-body text.
+
+        Sentence-level judgment rules:
+        - Judge candidate sentences one by one, using only the paragraph context below.
+        - If a candidate sentence should KEEP its current section, DO NOT include it in the output.
+        - Words like "previously", "has been reported", or citations such as "[12]" DO NOT automatically mean intro;
+          mixed paragraphs are common, so judge the actual sentence content carefully.
+
+        INPUT SCOPE:
+        - Only judge within the given paragraph context.
+        - The context shows ALL sentences in the paragraph.
+        - The candidates list shows only the intro / ignore / unknown sentences that have property tags.
+
+        STRICT OUTPUT (JSON ONLY):
+        {{
+          "section_updates": [
+            {{
+              "sent_global_id": <sent_global_id:int>,
+              "target_section": "<one of: abstract, intro, methods, results_discussion, conclusion, ignore>"
+            }}
+          ]
+        }}
+        If none need relabeling, return an empty list. Do not add comments or extra keys.
+
+        PAPER_TITLE: {paper_title or "N/A"}
+        PARAGRAPH_ID: {para_id}
+        CURRENT_CANDIDATE_SECTIONS: {sec_str}
+        ===== PARAGRAPH CONTEXT (ALL SENTENCES, ordered) =====
+        """
+    ).strip()
+
+    ctx_lines = []
+    for _, row in para_rows_all.sort_values("sent_global_id").iterrows():
+        sec = str(row.get("main_section_norm", "")).strip()
+        text = str(row.get("text", "")).replace("\n", " ").strip()
+        ctx_lines.append(f"[gid={row.get('sent_global_id')}, current_section={sec}] {text}")
+
+    cand_lines = []
+    for _, row in para_rows_candidates.sort_values("sent_global_id").iterrows():
+        props = loads_json_field(row.get("prop_window_hits"), None)
+        if props is None:
+            props = loads_json_field(row.get("cand_props"), [])
+        nums = loads_json_field(row.get("numbers_units"), [])
+        nums_str = "; ".join(
+            f"{item.get('value_str', '')} {item.get('unit', '')}".strip()
+            for item in nums
+        ) if isinstance(nums, list) else ""
+        cur_sec = str(row.get("main_section_norm", "")).strip()
+        text = str(row.get("text", "")).replace("\n", " ").strip()
+        cand_lines.append(
+            f'[gid={row.get("sent_global_id")}] current_section="{cur_sec}" text="{text}" props={props} nums="{nums_str}"'
+        )
+
+    prompt = (
+        f"{header}\n"
+        f"{os.linesep.join(ctx_lines)}\n"
+        f"===== CANDIDATES (subset to judge) =====\n"
+        f"{os.linesep.join(cand_lines) if cand_lines else '(none)'}\n"
+        "===== END ====="
+    )
+    return prompt[:prompt_trunc] if len(prompt) > prompt_trunc else prompt

@@ -1,0 +1,11 @@
+def tag_rule(tag: str) -> str:
+    rules = {
+        "Ex": "Keep only an excitation wavelength explicitly supported for the target sample. Do not use absorption wavelengths or generic UV-light observation.",
+        "Em": "Keep only an emission wavelength or emission peak explicitly supported for the target sample. Do not use readout channels unless explicitly stated as emission.",
+        "QY": "Keep only an explicit quantum-yield value for the target sample.",
+        "lifetime": "Keep only an explicit lifetime value with a time unit for the target sample.",
+        "ExDep": "Keep only an explicit excitation-dependence or excitation-independence statement for the target sample.",
+        "Chiral": "Keep only an explicit chirality statement for the target sample itself.",
+        "CPL": "Keep only an explicit CPL statement for the target sample itself.",
+    }
+    return rules.get(tag, "Keep only evidence-supported content for the requested tag.")

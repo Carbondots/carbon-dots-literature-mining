@@ -26,6 +26,9 @@ This repository provides three coordinated pipelines for carbon-dot literature m
 | `preprocess/` | PDF to markdown, symbol cleanup, tail trimming, tokenization |
 | `synthesis_mining/` | Synthesis extraction and `letter_table` generation |
 | `property_mining/` | Property extraction and `letter_table` generation |
+| `reproducibility/` | Prompt templates, field and rule inventories, source mappings, normalization resources, and version records |
+| `examples/workflow_examples/` | Four representative source-grounded workflow examples |
+| `examples/independent_audit_cases/` | Two representative cases from the 105-paper independent audit aligned with Supplementary Table S19 |
 
 ## Quick Start
 
@@ -44,6 +47,12 @@ python property_mining/run_property_pipeline.py --root data/mining
 - [Synthesis Mining README](./synthesis_mining/README.md)
 - [Property Mining README](./property_mining/README.md)
 - [Chinese Home](./README_zh_20260626_120655.md)
+
+## Review and reproducibility resources
+
+- [Reproducibility resources](reproducibility/)
+- [Representative workflow examples](examples/workflow_examples/)
+- [Independent-audit cases](examples/independent_audit_cases/)
 
 ## Dependency Files
 

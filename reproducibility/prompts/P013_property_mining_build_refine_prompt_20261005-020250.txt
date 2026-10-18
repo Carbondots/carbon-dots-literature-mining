@@ -1,0 +1,46 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P013
+# source_file: property_mining/09_llm_bind_app_vs_samples.py
+# source_lines: 386-423
+# function: build_refine_prompt
+# parameters: *, kind: str, tag: str, target_sample: SampleInfo, evidence_text: str, current_sentence: str
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_refine_prompt(
+    *,
+    kind: str,
+    tag: str,
+    target_sample: SampleInfo,
+    evidence_text: str,
+    current_sentence: str,
+) -> str:
+    desc = target_sample.desc.strip() if target_sample.desc.strip() else "(no synthesis summary available)"
+    return f"""You are rewriting ONE property sentence for ONE exact carbon-dot sample.
+
+Output exactly ONE JSON object and then {END_SENTINEL}. Do not output any other text.
+
+Schema:
+{{"result":"NONE|<one English sentence>"}}{END_SENTINEL}
+
+Hard rules:
+- If you output a sentence, it MUST contain the exact sample name "{target_sample.name}".
+- Use ONLY information explicitly supported by the evidence.
+- Do not invent numbers, units, comparison direction, analytes, or conditions.
+- For numeric tags, the sentence must include an explicit numeric value and unit from the evidence.
+- If the evidence is too ambiguous to rewrite a safe sentence for this exact sample, output NONE.
+
+Inputs:
+- source_kind = "{kind}"
+- property_tag = "{tag}"
+- target_sample_name = "{target_sample.name}"
+- target_sample_description = "{desc}"
+
+Tag and source rules:
+{property_rewrite_rules(tag, kind)}
+
+Evidence:
+{evidence_text}
+
+Current sentence:
+{current_sentence}
+""".strip()

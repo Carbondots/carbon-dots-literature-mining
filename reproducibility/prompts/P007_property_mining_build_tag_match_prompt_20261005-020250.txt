@@ -1,0 +1,25 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P007
+# source_file: property_mining/06_llm_clean_refined_properties.py
+# source_lines: 346-362
+# function: build_tag_match_prompt
+# parameters: tag: str, sentence: str
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_tag_match_prompt(tag: str, sentence: str) -> str:
+    return (
+        "You are an expert in photoluminescence of carbon dots.\n"
+        "Decide whether the sentence truly reports the requested property of the sample.\n\n"
+        f"Property tag: {tag}\n"
+        f"Definition and requirements:\n{property_spec(tag)}\n\n"
+        f"Sentence:\n{sentence}\n\n"
+        "Answer rules:\n"
+        "- Return {true} if the sentence clearly fits the definition of this property and provides the required "
+        "kind of information, such as the value or classification described above.\n"
+        "- Return {false} if the sentence mainly describes something else, such as only test setup or a different "
+        "property, and does not truly report this property for the sample.\n\n"
+        "Output exactly one JSON boolean wrapped in curly braces:\n"
+        "- {true} means the sentence matches this tag and should be kept.\n"
+        "- {false} means it does not match this tag and should be removed.\n"
+        "Print only {true} or {false} on one line, then on the next line print <END_OF_JSON>.\n"
+    )

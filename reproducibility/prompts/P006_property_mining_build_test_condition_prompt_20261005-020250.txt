@@ -1,0 +1,45 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P006
+# source_file: property_mining/06_llm_clean_refined_properties.py
+# source_lines: 307-343
+# function: build_test_condition_prompt
+# parameters: sentence: str
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_test_condition_prompt(sentence: str) -> str:
+    return (
+        "You are an expert in photoluminescence of carbon dots.\n"
+        "Decide whether the sentence should be kept as a useful PL property of carbon-dot samples, or removed as "
+        "either a pure measurement/imaging setup or a sentence that only describes composite host materials.\n\n"
+        "Definitions:\n"
+        "- A carbon-dot sample includes pure carbon dots, doped carbon dots, surface-functionalized carbon dots, "
+        "and mixtures of carbon dots with analytes or with other carbon dots.\n"
+        "- A composite/host sample means bulk materials that contain carbon dots, such as films, membranes, "
+        "electrodes, glass slides, nanocomposites or polymer hybrids, for example CDs@SiO2 film, CDs/PMMA film, "
+        "CDs-coated glass slide, CDs-loaded membrane, CDs-modified electrode, CDs-based nanocomposite, or "
+        "polymer/CDs hybrid film.\n\n"
+        "PL properties include: excitation wavelength, emission peak or band, emission colour, quantum yield, "
+        "lifetime, excitation dependence, and changes in fluorescence or phosphorescence intensity or colour.\n\n"
+        "KEEP the sentence and return {true} when:\n"
+        "1) It reports at least one PL property of a carbon-dot sample, not a composite host, or\n"
+        "2) It explicitly compares the PL properties of a composite sample and a separate carbon-dot sample in "
+        "the same sentence, for example CDs vs CDs@SiO2 film in emission, brightness, lifetime or quantum yield, or\n"
+        "3) It mixes measurement/imaging details with at least one PL property of a carbon-dot sample.\n\n"
+        "REMOVE the sentence and return {false} when:\n"
+        "A) All samples mentioned in the sentence are composite/host materials containing carbon dots and there is "
+        "no separate carbon-dot sample. If the sentence only talks about a single composite or several composites, "
+        "remove it even if the PL behaviour is attributed to carbon dots inside the composite.\n"
+        "B) The sentence is purely a measurement or imaging setup without any PL property, for example it only lists "
+        "instrument names, scan ranges, slit widths, step sizes, integration times, microscope channels, or generic "
+        "detection windows without a peak position, quantum yield, lifetime, or specific fluorescence/phosphorescence "
+        "behaviour of a carbon-dot sample.\n\n"
+        "If uncertain, use this rule:\n"
+        "- If the sentence contains any explicit PL parameter or behaviour of a carbon-dot sample that is not a "
+        "composite host, or a clear comparison between a composite and a separate carbon-dot sample, prefer KEEP.\n"
+        "- Otherwise, prefer REMOVE.\n\n"
+        f"Sentence:\n{sentence}\n\n"
+        "Now output a single JSON boolean wrapped in curly braces:\n"
+        "- {true} if the sentence should be kept;\n"
+        "- {false} if the sentence should be removed.\n"
+        "Output exactly {true} or {false} on one line, then on the next line output <END_OF_JSON>.\n"
+    )

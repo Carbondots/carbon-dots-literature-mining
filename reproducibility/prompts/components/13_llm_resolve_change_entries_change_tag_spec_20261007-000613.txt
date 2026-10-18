@@ -1,0 +1,15 @@
+def change_tag_spec(tag: str, sample_name: str) -> str:
+    normalized_tag = normalize_tag_name(tag)
+    if normalized_tag == "QY":
+        return (
+            f"Definition: QY is the photoluminescence quantum yield of {sample_name}.\n"
+            "Keep two candidates together only when both values explicitly belong to the same sample and are mapped to different Em, Ex, pH, or solvent conditions.\n"
+            "If this explicit mapping is missing, keep only one best candidate."
+        )
+    if normalized_tag == "lifetime":
+        return (
+            f"Definition: lifetime is the photoluminescence decay lifetime of {sample_name}.\n"
+            "Keep two candidates together only when both values explicitly belong to the same sample and are mapped to different Em, Ex, pH, or solvent conditions.\n"
+            "If this explicit mapping is missing, keep only one best candidate."
+        )
+    return f"Definition: {normalized_tag} is the target property of {sample_name}."

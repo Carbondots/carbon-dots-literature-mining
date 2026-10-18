@@ -1,0 +1,42 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P023
+# source_file: synthesis_mining/04_llm_refine_synthesis.py
+# source_lines: 29-62
+# function: build_prompt
+# parameters: text_block: str
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_prompt(text_block: str) -> str:
+    prompt = dedent(
+        """
+        You are a senior synthesis expert specializing in carbon dots (CDs).
+        You have extensive expertise in experimental synthesis methods for CDs
+        and are tasked with carefully analyzing scientific text.
+
+        Your mission is to extract ONLY the synthesis details of CDs that were
+        actually performed in THIS PAPER'S experimental work.
+
+        1. KEEP ONLY sentences that explicitly describe the synthesis of CDs performed in THIS PAPER, including:
+           - Carbonization methods (hydrothermal, solvothermal, microwave, pyrolysis, electrochemical, etc.)
+           - Reaction conditions (temperature, time)
+           - Precursors and solvents used
+           - Purification methods (dialysis, centrifugation, filtration)
+
+        2. DISCARD ALL sentences about:
+           - Composite or hybrid formation with other materials
+           - Post-synthetic modifications, characterizations, applications, reviews
+           - Synthesis details referenced from OTHER studies
+
+        3. OUTPUT:
+           - First, list each extracted synthesis sentence verbatim in original order.
+           - Then, provide one aggregation paragraph that summarizes all details.
+
+        STRICT BOUNDARY:
+        Only process text between the markers:
+        ===== TEXT START =====
+        and
+        ===== TEXT END =====
+        Do NOT include any other content or example text in your output.
+        """
+    ).strip()
+    return f"{prompt}\n===== TEXT START =====\n{text_block.strip()}\n===== TEXT END ====="

@@ -1,0 +1,4 @@
+def to_json_string_content(value: Any) -> str:
+    """Return JSON-safe content without the surrounding quotes."""
+    literal = to_json_string_literal(value)
+    return literal[1:-1]

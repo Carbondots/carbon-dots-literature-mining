@@ -1,0 +1,32 @@
+def property_spec(tag: str) -> str:
+    specs = {
+        "Ex": (
+            "Ex means excitation wavelength used to excite the photoluminescence of the sample itself. "
+            "The sentence should contain at least one explicit excitation wavelength value or a small set of "
+            "discrete values. Do not accept pure UV-vis absorption peaks. Do not accept only scan ranges such as "
+            "'300-600 nm' without a peak, maximum, or discrete excitation choices. Do not accept application-only "
+            "instrument settings when they do not describe intrinsic photoluminescence characterization."
+        ),
+        "Em": (
+            "Em means emission wavelength or emission band of the sample. The sentence should report at least one "
+            "explicit emission wavelength value or several discrete emission values under different conditions. "
+            "Do not accept UV-vis absorption information. Do not accept only scanned ranges without an emission peak."
+        ),
+        "QY": (
+            "QY means photoluminescence quantum yield of the sample. The sentence should contain at least one "
+            "explicit QY value, such as a percentage or a number between 0 and 1. Pure measurement settings are not "
+            "enough. Do not accept only a broad possible range without clear measured values."
+        ),
+        "lifetime": (
+            "lifetime means photoluminescence lifetime in ns, us, or ms. The sentence should contain at least one "
+            "explicit lifetime value or several discrete lifetime components. Do not accept fitting windows or "
+            "instrument settings without actual lifetime values."
+        ),
+        "ExDep": (
+            "ExDep means excitation dependence of one sample. A valid sentence either directly states excitation "
+            "dependence or excitation independence, or clearly says that emission wavelength or emission color shifts "
+            "or remains unchanged as excitation wavelength changes. Do not accept changes caused by pH, concentration, "
+            "temperature, reaction time, composition, dopant content, analytes, or comparisons between different samples."
+        ),
+    }
+    return specs.get(tag, "Decide whether the sentence truly describes the requested property.")

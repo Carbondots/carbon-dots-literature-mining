@@ -1,0 +1,7 @@
+def build_candidate_block(candidates: Sequence[SampleInfo]) -> str:
+    if not candidates:
+        return "None."
+    return "\n".join(
+        f"{index}. {sample.name}: {sample.desc or '(no synthesis summary available)'}"
+        for index, sample in enumerate(candidates, start=1)
+    )

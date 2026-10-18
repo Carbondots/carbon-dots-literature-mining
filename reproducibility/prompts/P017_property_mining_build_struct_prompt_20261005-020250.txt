@@ -1,0 +1,29 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P017
+# source_file: property_mining/11_llm_structure_and_deduplicate_properties.py
+# source_lines: 423-443
+# function: build_struct_prompt
+# parameters: tag: str, sample_name: str, refine_sentence: str, evidence_text: str
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_struct_prompt(tag: str, sample_name: str, refine_sentence: str, evidence_text: str) -> str:
+    tag_name = normalize_tag_name(tag)
+    meaning = TAG_MEANINGS.get(tag_name, tag_name)
+    if tag_name in CATEGORICAL_TAGS:
+        return f"""Extract one categorical property statement.
+Target sample: {sample_name}
+Target tag: {tag_name}
+Meaning: {meaning}
+Sentence: {refine_sentence}
+Return exactly one JSON object with schema {{"tag":"{tag_name}","label":"YES|NO"}} or the word none, then append {END_SENTINEL}."""
+    unit_block = ""
+    if tag_name in TAGS_NEED_UNIT_EVIDENCE:
+        unit_block = f"\nUnit evidence for disambiguating the unit only: {evidence_text}"
+    return f"""Extract one structured numeric property statement.
+Target sample: {sample_name}
+Target tag: {tag_name}
+Meaning: {meaning}
+Sentence: {refine_sentence}{unit_block}
+Return exactly one JSON object, one JSON array, or the word none, then append {END_SENTINEL}.
+Use tag={tag_name}. For Ex and Em use unit nm. For QY use %. For lifetime use an explicit time unit.
+Allowed vary_by values are "", "pH", "solvent", "Ex", "Em" and also "component" only for lifetime."""

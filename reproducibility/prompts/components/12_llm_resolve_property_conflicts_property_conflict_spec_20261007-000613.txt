@@ -1,0 +1,34 @@
+def property_conflict_spec(tag: str, sample_name: str = "the sample") -> str:
+    tag_name = normalize_tag_name(tag)
+    if tag_name == "Ex":
+        return (
+            f"Definition: Ex is the excitation wavelength used to excite {sample_name} in PL or PLE measurement.\n"
+            "- Prefer explicit best or optimal excitation over generic test settings.\n"
+            "- Do not use UV-vis absorption maxima as Ex."
+        )
+    if tag_name == "Em":
+        return (
+            f"Definition: Em is the emission peak wavelength of {sample_name} in PL or PLE measurement.\n"
+            "- Prefer explicit emission peaks over generic readout settings.\n"
+            "- Do not substitute other wavelength concepts."
+        )
+    if tag_name == "QY":
+        return (
+            f"Definition: QY is the photoluminescence quantum yield of {sample_name}.\n"
+            "- Keep two candidates only when the evidence explicitly links different QY values to different Em, Ex, pH, or solvent conditions for the same sample."
+        )
+    if tag_name == "lifetime":
+        return (
+            f"Definition: lifetime is the photoluminescence decay lifetime of {sample_name}.\n"
+            "- Keep two candidates only when the evidence explicitly links different lifetime values to different Em, Ex, pH, or solvent conditions for the same sample."
+        )
+    if tag_name == "ExDep":
+        return (
+            f"Definition: ExDep indicates whether emission of {sample_name} is excitation-dependent.\n"
+            "- Prefer explicit excitation-dependent or excitation-independent conclusions over indirect wording."
+        )
+    if tag_name == "Chiral":
+        return f"Definition: Chiral indicates whether {sample_name} is chiral."
+    if tag_name == "CPL":
+        return f"Definition: CPL indicates whether {sample_name} shows circularly polarized luminescence."
+    return f"Definition: unsupported tag '{tag_name}'."

@@ -1,0 +1,13 @@
+def property_mini_spec(tag: str) -> str:
+    specs = {
+        "Ex": "[Ex] Excitation condition for photoluminescence, usually with wavelength evidence.",
+        "Em": "[Em] Emission, fluorescence, or PL peak of the sample, usually with wavelength evidence.",
+        "QY": "[QY] Photoluminescence quantum yield of the sample.",
+        "lifetime": "[lifetime] Photoluminescence lifetime or decay time of the sample.",
+        "ExDep": "[ExDep] Explicit statement that emission depends on or is independent of excitation.",
+        "Chiral": "[Chiral] Explicit statement that the final sample is chiral.",
+        "CPL": "[CPL] Explicit circularly polarized luminescence of the sample.",
+    }
+    if tag not in specs:
+        raise ValueError(f"Unknown property tag: {tag}")
+    return specs[tag]

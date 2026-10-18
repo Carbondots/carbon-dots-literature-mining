@@ -1,0 +1,54 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P005
+# source_file: property_mining/05_llm_refine_property_text.py
+# source_lines: 864-909
+# function: build_refine_prompt
+# parameters: sample_name: str, tag: str, evidence_text: str
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_refine_prompt(sample_name: str, tag: str, evidence_text: str) -> str:
+    sample_name_raw = "" if sample_name is None else str(sample_name)
+    sample_name = to_json_string_content(sample_name_raw)
+    sample_name_json_literal = to_json_string_literal(sample_name_raw)
+    return f"""You are an expert in refining photoluminescence properties for carbon-dot materials.
+
+Return exactly one JSON array followed immediately by {END_SENTINEL}. Do not output prose or markdown.
+- The exact target sample as a valid JSON string literal is {sample_name_json_literal}. Reuse this escaped form whenever you place the sample name inside JSON output.
+
+Task:
+- Refine only the property tag "{tag}" for the target sample "{sample_name}".
+- Use only evidence from the WHITELIST and WINDOW_TEXT blocks below.
+- If you cannot refine a valid sentence for this tag, return exactly [{{"kind":"false"}}].
+
+Kind rules:
+- "main": intrinsic PL property of the exact target sample under normal characterization conditions.
+- "vs": comparative or series-level behavior that cannot be safely written as one intrinsic property sentence for the target sample.
+- "app": PL behavior in an application setting such as sensing, detection, imaging, anti-counterfeiting, or encryption.
+- "false": no usable refinement for this tag.
+
+Hard rules:
+1. Use only wording, numbers, and units supported by the evidence.
+2. For numeric tags (Ex, Em, QY, lifetime), output a sentence only when it includes an explicit numeric value and unit from the evidence.
+3. The sentence must be concise, self-contained, and in English.
+4. For "main", the sentence must clearly describe "{sample_name}" itself.
+5. For "vs" and "app", "sample" may be "{sample_name}" or an empty string.
+6. For every non-false object, "Property" must contain only the "{tag}" key.
+7. "evidence" must list only sentence ids from WHITELIST.
+
+Property rule:
+{property_spec(tag, sample_name)}
+
+Output schema:
+[
+  {{
+    "kind": "<main|vs|app|false>",
+    "sample": "<{sample_name} or empty string>",
+    "evidence": [<int>, ...],
+    "Property": {{
+      "{tag}": "<one refined sentence>"
+    }}
+  }}
+]
+{END_SENTINEL}
+
+{evidence_text}"""

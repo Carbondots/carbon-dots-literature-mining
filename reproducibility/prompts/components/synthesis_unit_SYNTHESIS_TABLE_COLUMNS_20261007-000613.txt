@@ -1,0 +1,12 @@
+SYNTHESIS_TABLE_COLUMNS = [
+    "CDs_Naming_in_Paper",
+    "Synthesis_Method",
+    "Temperature",
+    "Time",
+    "Microwave_Power",
+    "Precursor",
+    "Precursor_Amount",
+    "Solvent",
+    "Solvent_Volume",
+    "Purification",
+]

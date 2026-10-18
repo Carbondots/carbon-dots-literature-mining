@@ -1,0 +1,50 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P009
+# source_file: property_mining/07_llm_resolve_multisample_main.py
+# source_lines: 361-402
+# function: build_step2_refine_prompt
+# parameters: *, tag: str, target_sample: SampleInfo, reference_sample_names: Sequence[str], evidence_text: str
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_step2_refine_prompt(
+    *,
+    tag: str,
+    target_sample: SampleInfo,
+    reference_sample_names: Sequence[str],
+    evidence_text: str,
+) -> str:
+    reference_block = ", ".join(reference_sample_names) if reference_sample_names else "(none)"
+    return f"""You are refining ONE photoluminescence (PL) property for ONE target sample in a MULTI-SAMPLE paper.
+
+CRITICAL OUTPUT RULES:
+- Output ONLY ONE JSON object. No explanation. No extra text. No code fences.
+- The very last characters must be {END_SENTINEL}.
+- The JSON must be exactly:
+  {{"sentence":"<ONE single English sentence, or NONE>"}}{END_SENTINEL}
+
+Hard constraints:
+1) Output must be either one single complete English sentence or the exact string "NONE".
+2) If output is a sentence, it MUST explicitly include the target sample name "{target_sample.name}".
+3) Use ONLY information explicitly supported by evidence_text. NO INFERENCE.
+4) Do NOT use placeholders like "(conditions)" or "under certain conditions" unless the exact condition text is explicitly present in evidence_text and you include that exact condition.
+5) For numeric tags (Ex, Em, QY, lifetime): the output MUST contain exactly ONE target numeric value for this tag.
+6) Multi-sample safety: if the evidence cannot uniquely support this tag for the target sample, output NONE.
+
+ORDER-ALIGNMENT RULE:
+- reference_samples_order = [{reference_block}]
+- If evidence_text presents an ordered list of values for multiple samples and uses cues like "respectively" or an explicit aligned list or table-like mapping,
+  then you MUST map the k-th value to the k-th sample in reference_samples_order.
+- If such mapping cues are absent, or the list length does not match the sample list, or any ambiguity exists, output NONE.
+
+Property template for this tag (MUST follow):
+{refine_property_spec(tag, sample_name=target_sample.name)}
+
+Context:
+tag = "{tag}"
+target_sample_name = "{target_sample.name}"
+target_sample_description = "{target_sample.desc}"
+reference_samples_order = [{reference_block}]
+
+evidence_text:
+{evidence_text}
+"""

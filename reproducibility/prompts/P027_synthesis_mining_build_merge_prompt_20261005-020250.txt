@@ -1,0 +1,41 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P027
+# source_file: synthesis_mining/07_merge_extractions_to_csv.py
+# source_lines: 73-105
+# function: build_merge_prompt
+# parameters: column: str, values: list[str]
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_merge_prompt(column: str, values: list[str]) -> str:
+    cleaned = [str(v or "N/A") for v in values][:3]
+    while len(cleaned) < 3:
+        cleaned.append(cleaned[-1] if cleaned else "N/A")
+
+    quantity = column in QUANTITY_VALUE_COLUMNS
+    head = "quantity column" if quantity else "table column"
+    rules = (
+        "- Do NOT invent numbers.\n"
+        "- Every number MUST bind to its subject, e.g., \"lysine (3 g)\".\n"
+        "- Keep all subject names; if a subject has no explicit value, \"SUBJECT (N/A)\" is allowed.\n"
+        "- Percentages and ratios are already valid values; keep the paper's original ratio/% format instead of converting it into mass, moles, molarity, or another unit.\n"
+        "- Preserve the quantitative frame used for the current sample. Do not merge a ratio/% expression into mM/mmol/mg by borrowing another sample's absolute values.\n"
+        "- Preserve explicit multi-step structure like \"step1: ...; step2: ...\" and do not collapse it, but only when those are true synthesis-stage reaction steps rather than cooling/workup/purification.\n"
+        "- If subjects/numbers conflict -> decision=CONFLICT, value=N/A."
+        if quantity
+        else
+        "- If core meaning conflicts -> decision=CONFLICT, value=N/A.\n"
+        "- Preserve explicit prefixes/descriptors and any `step1: ...; step2: ...` structure that refers to true synthesis-stage reaction steps.\n"
+        "- If same meaning pick most specific; if compatible but incomplete MERGE concisely."
+    )
+    return f"""You will consolidate three extractions for the SAME {head}.
+
+Column: {column}
+Extraction1: {cleaned[0]}
+Extraction2: {cleaned[1]}
+Extraction3: {cleaned[2]}
+
+Rules:
+{rules}
+Output ONLY this XML:
+<decision>SAME|MERGE|CONFLICT</decision>
+<value>FINAL_SINGLE_LINE_VALUE_OR_N/A</value>""".strip()

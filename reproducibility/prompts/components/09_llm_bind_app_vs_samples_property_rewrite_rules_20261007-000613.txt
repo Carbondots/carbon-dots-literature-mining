@@ -1,0 +1,22 @@
+def property_rewrite_rules(tag: str, kind: str) -> str:
+    source_rule = {
+        "app": (
+            "Because source_kind=app, keep application context only when the evidence explicitly supports it. "
+            "Do not turn an application sentence into a generic intrinsic property sentence."
+        ),
+        "vs": (
+            "Because source_kind=vs, keep comparison or trend wording only when it is explicit in the evidence. "
+            "Do not invent ranking language or comparative claims."
+        ),
+    }.get(kind, "Use only the source sentence type supported by the evidence.")
+
+    shared = {
+        "Ex": "Keep only an excitation wavelength explicitly supported by the evidence. Ignore absorption wavelengths and generic UV-light observation.",
+        "Em": "Keep only an emission wavelength or emission peak explicitly supported by the evidence. Ignore readout channels unless explicitly stated as emission.",
+        "QY": "Keep only an explicit quantum-yield value. Do not invent percentages or mix baseline and post-treatment values.",
+        "lifetime": "Keep only an explicit lifetime value with a time unit. Do not invent averages across components.",
+        "ExDep": "Keep only an explicit excitation-dependence or excitation-independence statement for the target sample.",
+        "Chiral": "Keep only an explicit chirality statement for the target sample itself.",
+        "CPL": "Keep only an explicit CPL statement for the target sample itself.",
+    }
+    return f"{shared.get(tag, 'Keep only evidence-supported content for the requested tag.')} {source_rule}"

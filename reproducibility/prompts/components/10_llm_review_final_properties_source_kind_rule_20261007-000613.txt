@@ -1,0 +1,7 @@
+def source_kind_rule(source_kind: str) -> str:
+    rules = {
+        "main": "For source_kind=main, keep or rewrite only intrinsic sample-level properties of the standalone carbon-dot sample.",
+        "app": "For source_kind=app, application context may remain only when the evidence explicitly supports it for the target sample.",
+        "vs": "For source_kind=vs, comparative or trend wording may remain only when the evidence explicitly supports it for the target sample.",
+    }
+    return rules.get(source_kind, "Keep only evidence-supported content for the target sample.")

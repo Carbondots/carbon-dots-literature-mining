@@ -1,0 +1,64 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P020
+# source_file: property_mining/13_llm_resolve_change_entries.py
+# source_lines: 993-1048
+# function: build_change_prompt
+# parameters: sample_name: str, sample_desc: str, tag: str, value_a: str, value_b: str, sentence_a: str, sentence_b: str, blocks_a: Sequence[Dict[str, str]], blocks_b: Sequence[Dict[str, str]]
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_change_prompt(
+    sample_name: str,
+    sample_desc: str,
+    tag: str,
+    value_a: str,
+    value_b: str,
+    sentence_a: str,
+    sentence_b: str,
+    blocks_a: Sequence[Dict[str, str]],
+    blocks_b: Sequence[Dict[str, str]],
+) -> str:
+    desc = sample_desc.strip() if str(sample_desc or "").strip() else "(no synthesis description available)"
+
+    def format_blocks(letter: str, blocks: Sequence[Dict[str, str]]) -> str:
+        lines = [f"{letter} evidence:"]
+        if not blocks:
+            lines.append("Evidence 1: (empty)")
+            return "\n".join(lines)
+        for index, block in enumerate(blocks, start=1):
+            lines.append(f"Evidence {index} {block.get('meta', '')}: {block.get('text', '') or '(empty)'}")
+        return "\n".join(lines)
+
+    return f"""
+You are an expert curator for carbon-dot photoluminescence properties.
+
+Task:
+- This is one A/B change case for one target sample and one target tag.
+- Candidate A gives {value_a}; Candidate B gives {value_b}.
+- Keep two values together only when they explicitly map to different Em, Ex, pH, or solvent conditions for the same target sample.
+- If both values can be kept, output one refined sentence that maps each value to one explicit condition on one consistent axis.
+- Do not rewrite Ex as Em, and do not rewrite Em as Ex.
+- Preserve explicit numeric units.
+- If the evidence does not support a valid merged sentence, return NONE.
+
+Target sample: {sample_name}
+Target sample description:
+{desc}
+Target tag: {normalize_tag_name(tag)}
+Tag definition:
+{change_tag_spec(tag, sample_name)}
+
+Candidate A refine sentence:
+{sentence_a}
+{format_blocks("A", blocks_a)}
+
+Candidate B refine sentence:
+{sentence_b}
+{format_blocks("B", blocks_b)}
+
+Output rules:
+- Output only one JSON object, then immediately output {END_SENTINEL}
+- Allowed schemas:
+  {{"refine_sentence":"<one sentence>"}}{END_SENTINEL}
+  {{"none":"YES"}}{END_SENTINEL}
+- No markdown, no code fence, no extra explanation.
+""".strip()

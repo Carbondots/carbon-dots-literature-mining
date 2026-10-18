@@ -1,0 +1,67 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P008
+# source_file: property_mining/07_llm_resolve_multisample_main.py
+# source_lines: 175-233
+# function: build_step1_prompt
+# parameters: *, tag: str, current_assigned_sample: str, refined_sentence: str, evidence_text: str, candidate_samples: Sequence[SampleInfo]
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_step1_prompt(
+    *,
+    tag: str,
+    current_assigned_sample: str,
+    refined_sentence: str,
+    evidence_text: str,
+    candidate_samples: Sequence[SampleInfo],
+) -> str:
+    candidates_block = "\n".join(
+        f"{index}. {sample.name}: {sample.desc}"
+        for index, sample in enumerate(candidate_samples, start=1)
+    )
+    cand_order = ", ".join(sample.name for sample in candidate_samples) if candidate_samples else "(none)"
+
+    return f"""You are an expert reviewer for extracting photoluminescence (PL) properties of carbon dots in a MULTI-SAMPLE context.
+
+TASK:
+Decide whether the refined sentence can be kept AS-IS for the currently assigned sample, or it must be refined again.
+
+CRITICAL OUTPUT RULES:
+- Output ONLY ONE JSON object. No explanation. No extra text. No code fences.
+- The very last characters must be {END_SENTINEL}.
+
+ALLOWED OUTPUT ONLY (choose exactly one):
+(1) KEEP:
+{{"action":"KEEP"}}{END_SENTINEL}
+
+(2) REFINE (candidates must be non-empty and chosen from the provided list):
+{{"action":"REFINE","candidates":["sampleA","sampleB"]}}{END_SENTINEL}
+
+HARD CONDITIONS for action="KEEP" (ALL must be satisfied; otherwise REFINE):
+1) The sentence explicitly names the currently assigned sample.
+2) The sentence is unambiguously attributable to ONE sample in this multi-sample paper.
+3) For numeric tags (Ex/Em/QY/lifetime): the sentence contains a concrete numeric value and does NOT mix multiple values unless each value is explicitly tied to stated measurement conditions.
+4) No mismatch risk: if the evidence suggests a different prepared system or sample than the assigned one, you must REFINE.
+
+HARD RULE - LIST / "respectively" ORDER ALIGNMENT:
+- If the evidence contains an ordered list of values and uses cues like "respectively", then you MUST align values to samples by the given candidate sample order:
+  candidate_sample_order = [{cand_order}]
+  1st candidate -> 1st value, 2nd candidate -> 2nd value, and so on.
+- KEEP is allowed ONLY if the numeric value or claim in refined_sentence matches the value aligned to the currently assigned sample.
+- If the aligned value cannot be determined with high confidence, or refined_sentence uses the wrong aligned value, you MUST output REFINE.
+
+How to choose candidates when action="REFINE":
+- Output a NON-EMPTY list of names chosen ONLY from the provided candidate list below.
+- Prefer names that appear to be discussed in the evidence.
+- If unclear, output ALL candidates in the same order as provided.
+
+INPUTS:
+tag = "{tag}"
+currently_assigned_sample = "{current_assigned_sample}"
+refined_sentence = "{refined_sentence}"
+
+evidence_text:
+{evidence_text}
+
+candidate_samples (ORDERED list; MUST preserve this order for alignment):
+{candidates_block}
+"""

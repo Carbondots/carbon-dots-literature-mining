@@ -1,0 +1,3 @@
+case_id,corpus_id,legacy_processing_id,case_title,table_s19_operational_category,table_s19_operational_definition,review_status
+case_2197,2197,6169,Source-conversion discrepancy and additional sample,Sample reconstruction,"A reference sample was omitted, or an additional in-scope sample was predicted without benchmark support.",Source-grounded review completed
+case_2297,2297,6277,Measurement-context attribution of a chemiluminescence peak,Sample–property attribution,"A property value was assigned to a sample not supported by the source evidence.",Source-grounded review completed

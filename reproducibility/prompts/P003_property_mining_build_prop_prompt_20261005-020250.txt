@@ -1,0 +1,38 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P003
+# source_file: property_mining/04_llm_decide_samples_and_props.py
+# source_lines: 287-316
+# function: build_prop_prompt
+# parameters: window_text: str, whitelist: Dict[str, str], allowed_tags: Sequence[str]
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_prop_prompt(window_text: str, whitelist: Dict[str, str], allowed_tags: Sequence[str]) -> str:
+    return dedent(
+        f"""
+        You are an expert in extracting photoluminescence properties for carbon dots.
+
+        Return exactly one JSON object and then append {END_SENTINEL}. Do not add prose or markdown.
+
+        Task:
+        - Decide which sentences in WHITELIST express which property tags.
+        - Work only with the active tags for this call.
+        - Use only sentence ids from WHITELIST.
+
+        Active tags:
+        {json.dumps(list(allowed_tags), ensure_ascii=False)}
+
+        Property rules:
+        {" ".join(property_mini_spec(tag) for tag in allowed_tags)}
+
+        Output schema:
+        {{"prop_hits":[{{"tag":"<active tag>","sent_id":"<whitelist id>"}}]}}
+
+        WHITELIST:
+        {json.dumps([{"sent_id": sent_id, "text": text} for sent_id, text in whitelist.items()], ensure_ascii=False)}
+
+        ===== CONTEXT WINDOW =====
+        {window_text}
+        ===== END =====
+        Output must end with {END_SENTINEL}
+        """
+    ).strip()

@@ -1,0 +1,15 @@
+def normalize_tag_name(tag: str) -> str:
+    text = str(tag or "").strip()
+    if not text:
+        return ""
+    compact = re.sub(r"\s+", "", text).upper()
+    mapping = {
+        "EX": "Ex",
+        "EM": "Em",
+        "QY": "QY",
+        "LIFETIME": "lifetime",
+        "EXDEP": "ExDep",
+        "CHIRAL": "Chiral",
+        "CPL": "CPL",
+    }
+    return mapping.get(compact, text)

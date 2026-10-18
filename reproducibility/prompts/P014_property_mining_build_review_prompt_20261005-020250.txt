@@ -1,0 +1,54 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P014
+# source_file: property_mining/10_llm_review_final_properties.py
+# source_lines: 225-270
+# function: build_review_prompt
+# parameters: *, source_kind: str, tag: str, target_sample: SampleInfo, evidence_text: str, current_sentence: str, other_samples_context: str
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_review_prompt(
+    *,
+    source_kind: str,
+    tag: str,
+    target_sample: SampleInfo,
+    evidence_text: str,
+    current_sentence: str,
+    other_samples_context: str,
+) -> str:
+    multi_block = f"\n[Other samples in this paper]\n{other_samples_context}\n" if other_samples_context else ""
+    return f"""You are reviewing ONE carbon-dot property sentence against the evidence.
+
+Output exactly ONE JSON object and then {END_SENTINEL}. Do not output any other text.
+
+Schema:
+{{"verdict":"KEEP|DROP|REWRITE","reason":"SUPPORTED|MEASUREMENT|WRONG_SAMPLE|GENERAL|NON_BASELINE|INCOMPLETE|COMPOSITE|OTHER"}}{END_SENTINEL}
+
+Decision rules:
+- KEEP: the current sentence is already correct and fully supported for the target sample.
+- DROP: the sentence is unsupported, generic, a pure measurement setting, the wrong sample, or otherwise not salvageable.
+- REWRITE: the evidence supports the target sample, but the current sentence needs correction, completion, or baseline extraction.
+
+Hard rules:
+- Use only the evidence.
+- For numeric tags, explicit numeric value and unit are required.
+- Do not guess a specific sample from a generic family label.
+- Prefer DROP over KEEP when the evidence is ambiguous.
+
+Inputs:
+- source_kind = "{source_kind}"
+- property_tag = "{tag}"
+- target_sample_name = "{target_sample.name}"
+- target_sample_description = "{target_sample.desc or '(no synthesis summary available)'}"
+
+Tag rule:
+{tag_rule(tag)}
+
+Source-kind rule:
+{source_kind_rule(source_kind)}{multi_block}
+
+Evidence:
+{evidence_text}
+
+Current sentence:
+{current_sentence}
+""".strip()

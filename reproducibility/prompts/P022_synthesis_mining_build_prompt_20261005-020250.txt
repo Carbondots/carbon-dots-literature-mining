@@ -1,0 +1,46 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P022
+# source_file: synthesis_mining/03_llm_synthesis_decision.py
+# source_lines: 24-61
+# function: build_prompt
+# parameters: text_block: str
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_prompt(text_block: str) -> str:
+    prompt = dedent(
+        """
+        You are a materials scientist assistant.
+
+        Your task is to determine whether the following paragraph describes the synthesis method
+        or preparation process of carbon dots (CDs), including:
+
+        If the paragraph contains any of the following synthesis-related information, answer "YES":
+        - Any synthesis step (e.g., heating, hydrothermal, solvothermal, carbonization, microwave, pyrolysis, etc.)
+        - Reaction conditions (e.g., temperature, time, precursor, precursor amount, solvent, solvent volume, microwave power)
+        - Purification or post-treatment (e.g., centrifugation, dialysis, filtration, neutralization)
+        - Synthesis Method
+        - Temperature
+        - Time
+        - Microwave Power
+        - Cooling Method
+        - Precursor
+        - Precursor Amount
+        - Solvent
+        - Solvent Volume
+        - Purification
+        - CDs Naming in Paper
+        - Is Multi CDs
+
+        # -------------- Additional decision rule --------------
+        Additionally, answer "YES" if the paragraph, in any wording, implies that detailed synthesis
+        information is provided elsewhere (e.g. "Supporting Information", "Supplementary Materials",
+        "Methods section", "Appendix", "ESI", "Table S1", etc.), regardless of the exact phrase used.
+        # ------------------------------------------------------
+
+        Please only answer "YES" or "NO".
+        Do not explain your answer.NO REASEN! ONLY YES OR NO!
+
+        Paragraph:
+        """
+    ).strip()
+    return f"{prompt}\n{text_block.strip()}\n\nAnswer:"

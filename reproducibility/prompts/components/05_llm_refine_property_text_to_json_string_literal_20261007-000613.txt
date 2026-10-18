@@ -1,0 +1,5 @@
+def to_json_string_literal(value: Any) -> str:
+    """Return a stable JSON string literal."""
+    if value is None:
+        value = ""
+    return json.dumps(str(value), ensure_ascii=False)

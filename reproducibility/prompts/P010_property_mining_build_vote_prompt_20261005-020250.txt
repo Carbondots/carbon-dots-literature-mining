@@ -1,0 +1,47 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P010
+# source_file: property_mining/07_llm_resolve_multisample_main.py
+# source_lines: 501-539
+# function: build_vote_prompt
+# parameters: *, tag: str, sample_name: str, evidence_text: str, sentences: Sequence[str], reference_samples_order: Sequence[str]
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_vote_prompt(
+    *,
+    tag: str,
+    sample_name: str,
+    evidence_text: str,
+    sentences: Sequence[str],
+    reference_samples_order: Sequence[str],
+) -> str:
+    items = "\n".join(f"{index}) {sentence}" for index, sentence in enumerate(sentences, start=1))
+    refs = ", ".join(reference_samples_order) if reference_samples_order else "(none)"
+
+    return f"""You are selecting the single BEST sentence to keep for ONE sample and ONE tag, based on the evidence.
+
+CRITICAL OUTPUT RULES:
+- Output ONLY ONE JSON object. No explanation. No extra text. No code fences.
+- The very last characters must be {END_SENTINEL}.
+- Output must be exactly:
+  {{"pick": <INTEGER>}}{END_SENTINEL}
+
+Selection rules:
+1) The chosen sentence MUST be supported by the evidence_text. NO INFERENCE.
+2) The chosen sentence MUST be about sample "{sample_name}" and must not attribute values to the wrong sample.
+3) Reject vague placeholders such as "conditions" without explicit condition text.
+4) ORDER ALIGNMENT:
+   - reference_samples_order = [{refs}]
+   - If evidence_text uses cues like "respectively", ordered lists, or aligned mapping, you MUST enforce the same order.
+5) Prefer the sentence that is most precise and information-complete without adding unsupported details.
+
+INPUT:
+tag = "{tag}"
+sample = "{sample_name}"
+reference_samples_order = [{refs}]
+
+evidence_text:
+{evidence_text}
+
+candidate_sentences:
+{items}
+"""

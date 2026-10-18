@@ -1,0 +1,39 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P021
+# source_file: property_mining/13_llm_resolve_change_entries.py
+# source_lines: 1051-1081
+# function: build_struct_prompt
+# parameters: tag: str, sample_name: str, refine_sentence: str, unit_evidence_text: str
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_struct_prompt(tag: str, sample_name: str, refine_sentence: str, unit_evidence_text: str) -> str:
+    normalized_tag = normalize_tag_name(tag)
+    unit_hint = "explicit_lifetime_unit" if normalized_tag == "lifetime" else "%"
+    unit_block = ""
+    if str(unit_evidence_text or "").strip():
+        unit_block = "\n\nUnit evidence for disambiguating units only:\n" + unit_evidence_text
+    return f"""
+You are an expert curator for carbon-dot photoluminescence properties.
+
+Task:
+- Convert one refined sentence into one structured JSON array for tag={normalized_tag}.
+- Each array element must represent one value.
+- Required keys in each element: "tag", "values", "unit", "vary_by", "vary_values".
+- Allowed vary_by values are "Em", "Ex", "pH", and "solvent".
+- If the sentence does not explicitly support one consistent condition axis across the kept values, return {{"none":"YES"}}.
+
+Target sample: {sample_name}
+Target tag: {normalized_tag}
+Tag definition:
+{change_tag_spec(tag, sample_name)}
+Refined sentence:
+{refine_sentence}{unit_block}
+
+Output format:
+[{{"tag":"{normalized_tag}","values":V1,"unit":"{unit_hint}","vary_by":"Em_or_Ex_or_pH_or_solvent","vary_values":COND1}},{{"tag":"{normalized_tag}","values":V2,"unit":"{unit_hint}","vary_by":"same_as_first","vary_values":COND2}}]{END_SENTINEL}
+
+Output rules:
+- Output only one JSON array or one wrapper object, then immediately output {END_SENTINEL}
+- Or output {{"none":"YES"}}{END_SENTINEL}
+- No markdown, no code fence, no explanation.
+""".strip()

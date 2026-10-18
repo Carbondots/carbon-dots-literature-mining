@@ -1,0 +1,72 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P019
+# source_file: property_mining/12_llm_resolve_property_conflicts.py
+# source_lines: 1072-1135
+# function: build_conflict_prompt
+# parameters: sample_name: str, sample_desc: str, tag: str, candidates: Sequence[CandidateGroup], evidence_blocks_by_candidate: Optional[Dict[int, List[EvidenceBlock]]]=None
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_conflict_prompt(
+    sample_name: str,
+    sample_desc: str,
+    tag: str,
+    candidates: Sequence[CandidateGroup],
+    evidence_blocks_by_candidate: Optional[Dict[int, List[EvidenceBlock]]] = None,
+) -> str:
+    tag_name = normalize_tag_name(tag)
+    allow_two = tag_name in {"QY", "lifetime"}
+    sample_desc_text = sample_desc.strip() if sample_desc and sample_desc.strip() else "(no synthesis description available)"
+
+    candidate_lines: List[str] = []
+    for candidate in candidates:
+        candidate_lines.append(f"Candidate {candidate.candidate_id}:")
+        candidate_lines.append(f"refine_sentence: {candidate.refine_sentence}")
+        candidate_lines.append("evidence:")
+        blocks = list((evidence_blocks_by_candidate or {}).get(candidate.candidate_id, candidate.evidence_blocks) or [])
+        if not blocks:
+            candidate_lines.append("Evidence 1: (empty)")
+        else:
+            for index, block in enumerate(blocks, start=1):
+                if block.meta:
+                    candidate_lines.append(f"Evidence {index} {block.meta}: {block.evidence_text or '(empty)'}")
+                else:
+                    candidate_lines.append(f"Evidence {index}: {block.evidence_text or '(empty)'}")
+        candidate_lines.append("")
+
+    output_rule = (
+        '- Return exactly one JSON object {"best_index": <int>} and then <END_OF_JSON>.'
+        if not allow_two
+        else (
+            '- Default to one best index.\n'
+            '- Return two indices only when the same sample has explicitly different QY or lifetime values under different Em, Ex, pH, or solvent conditions.\n'
+            '- Use {"best_index": <int>, "multi": "NO"} for one candidate.\n'
+            '- Use {"best_index": [<int>, <int>], "multi": "YES"} for two candidates.\n'
+            "- Then output <END_OF_JSON>."
+        )
+    )
+
+    return f"""
+You are an expert in carbon-dot photoluminescence property curation.
+
+Select the best candidate for one sample and one property tag.
+
+Target sample: {sample_name}
+Target sample description:
+{sample_desc_text}
+Target tag: {tag_name}
+Tag definition:
+{property_conflict_spec(tag_name, sample_name)}
+
+Rules:
+- Use only evidence about the target sample.
+- Ignore pure measurement settings when they do not report the property itself.
+- Prefer explicit conclusions over weak inferences.
+- Prefer exact property values over vague ranges or generic wording.
+- For QY and lifetime, keep two candidates only under the strict multi-condition rule above.
+- Output only JSON followed immediately by {END_SENTINEL}.
+
+{output_rule}
+
+Candidates:
+{chr(10).join(candidate_lines).strip()}
+""".strip()

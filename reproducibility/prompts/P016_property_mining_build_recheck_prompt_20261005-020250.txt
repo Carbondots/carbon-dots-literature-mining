@@ -1,0 +1,45 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P016
+# source_file: property_mining/10_llm_review_final_properties.py
+# source_lines: 357-393
+# function: build_recheck_prompt
+# parameters: *, source_kind: str, tag: str, target_sample: SampleInfo, evidence_text: str, rewritten_sentence: str, other_samples_context: str
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_recheck_prompt(
+    *,
+    source_kind: str,
+    tag: str,
+    target_sample: SampleInfo,
+    evidence_text: str,
+    rewritten_sentence: str,
+    other_samples_context: str,
+) -> str:
+    multi_block = f"\n[Other samples in this paper]\n{other_samples_context}\n" if other_samples_context else ""
+    return f"""You are verifying ONE rewritten carbon-dot property sentence.
+
+Output exactly one JSON object with key "keep" and then {END_SENTINEL}. Do not output any other text.
+
+Schema:
+{{"keep": true | false}}{END_SENTINEL}
+
+Keep the sentence only if it is fully supported for the target sample and obeys the source-kind and tag rules.
+
+Inputs:
+- source_kind = "{source_kind}"
+- property_tag = "{tag}"
+- target_sample_name = "{target_sample.name}"
+- target_sample_description = "{target_sample.desc or '(no synthesis summary available)'}"
+
+Tag rule:
+{tag_rule(tag)}
+
+Source-kind rule:
+{source_kind_rule(source_kind)}{multi_block}
+
+Evidence:
+{evidence_text}
+
+Rewritten sentence:
+{rewritten_sentence}
+""".strip()

@@ -1,0 +1,120 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P024
+# source_file: synthesis_mining/05_llm_extract_sample_names.py
+# source_lines: 339-450
+# function: build_prompt
+# parameters: original_text: str, refined_text: str
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_prompt(original_text: str, refined_text: str) -> str:
+    prompt = dedent(
+        f"""
+        You are a synthesis researcher in carbon dots.
+
+        Your task is to extract synthesis details for every carbon-dot sample explicitly synthesized in this paper.
+        Exclude CDs cited from other works.
+
+        This output will be parsed by a downstream script, so the format rules are strict.
+
+        Core rules:
+        - Expand the sample list completely. If the paper synthesized N different CDs, output N separate entries.
+        - Every sample entry must begin with a standalone line exactly like this:
+          CDs Name: [sample name]
+        - Use the literal prefix `CDs Name:` for every sample. Do not replace it with `CDs_name`, `Name`, headings only, or bullet-only names.
+        - One sample block equals one concrete synthesized carbon-dot sample only.
+        - A `CDs Name:` line must contain only one concrete sample identifier. It must never bundle a pair, a control-plus-target comparison, multiple ratios, multiple temperatures, multiple times, multiple conditions, or a whole series into one name.
+        - If multiple samples share the same synthesis route, you must still repeat the full synthesis details for each sample separately.
+        - Treat any change in sample identity as a separate sample. This includes differences in precursor set, precursor presence/absence, additive/passivator presence/absence, chirality/handedness, control role, ratio, concentration, temperature, time, solvent system, or other stated synthesis variable.
+        - Use conservative closed-set inference only. Expand additional samples only when the paper gives a discrete, finite, and uniquely recoverable set, such as an explicit naming rule tied to an explicit parameter list, an explicit sample count plus a complete parameter schedule, or endpoints plus an explicit increment/step that uniquely determines every member.
+        - If one parameter is varied across several values, create one separate sample block per value.
+        - If two samples are presented as a pair or comparison, they still must be separated into two blocks. This includes chiral pairs, enantiomeric pairs, opposite-handed samples, and target-versus-control comparisons.
+        - If a chiral pair is synthesized in this paper, list each member of the pair as its own sample block even if the paper describes them together.
+        - If a control, blank, baseline, parent, pristine, bare, undoped, unpassivated, or precursor-omission sample is explicitly synthesized/prepared in this paper, include it as its own sample block with full synthesis details.
+        - If one sample differs only because a precursor/additive is omitted or replaced, that still counts as a separate synthesized sample and must not be merged into another block.
+        - If the paper says a sample was prepared by the same, similar, analogous, identical, or representative method as another sample, resolve that reference and write the full synthesis block again for each affected sample.
+        - If the paper provides one representative example for a sample family, expand the remaining members only when the paper itself gives a complete closed-set naming rule or parameter schedule that uniquely determines every member.
+        - If the paper names only some members of a series, infer the remaining members only when the paper's own naming pattern and parameter schedule uniquely determine a finite closed set.
+        - If no explicit name is given but the paper clearly distinguishes separate synthesized samples, assign a meaningful and distinct name.
+        - Preserve the paper's original sample-name wording whenever it is provided. Do NOT shorten names by dropping prefixes, suffixes, Greek letters, stereochemical descriptors, oxidation-state descriptors, color/emission descriptors, or other leading modifiers.
+        - Keep important prefixes exactly as written in the paper, such as `beta-`, `β-`, `alpha-`, `D-`, `L-`, `N-`, `S-`, `R-`, `orange-red emitting`, and similar descriptors.
+        - Do not invent synthesis values. If a field is not explicitly stated in the paper, write `N/A`. Do not default missing temperature/time/power values to room temperature, ambient conditions, or any other guessed value.
+        - All synthesis fields other than `Purification Methods` must describe only precursor handling before reaction and the reaction itself. Do NOT use cooling, standing, washing, rinsing, extraction, dialysis, centrifugation, filtration, drying, elution, or re-dispersion as synthesis-stage values for these fields.
+        - Reaction solvents mean only liquids used before or during precursor dissolution and the synthesis reaction itself. Do NOT count washing, rinsing, extraction, dialysis, elution, re-dispersion, or any other post-treatment liquid as a reaction solvent; those belong only in `Purification Methods`.
+        - If the paper uses a percentage or ratio, keep that original percentage/ratio expression. Do NOT convert it into mass, moles, molarity, or any other new unit unless the paper explicitly provides that converted value.
+        - Preserve the quantitative frame used for the current sample. If the current sample is defined in mol%, wt%, or ratio form, do NOT borrow another sample's absolute amounts or concentrations to rewrite it as mM, mmol, mg, or another unit.
+        - Only treat true synthesis-stage reaction steps as multi-step synthesis. Do NOT create extra `step2`/`step3` labels for cooling, standing, workup, washing, dialysis, centrifugation, filtration, drying, or other post-treatment/purification actions.
+        - If a synthesis has multiple sequential synthesis-stage reaction steps, format every step-dependent field using `step1: ...; step2: ...; step3: ...` in chronological order, and keep the same step numbering aligned across fields within the same sample block.
+        - If you are not sure whether a sample was actually synthesized in this paper, do NOT create it.
+
+        For each synthesized CD, provide clearly:
+        - CDs Name
+        - Synthesis Method
+        - Precursors
+        - Reaction Solvents
+        - Temperature
+        - Time
+        - Precursor Quantity
+        - Solvent Volume
+        - Microwave Power
+        - Purification Methods
+
+        STRICT Exclusion:
+        - Do NOT include CDs from referenced studies or comparative analyses.
+        - Do NOT include CDs composited or hybridized with other materials.
+        - Do NOT include post-synthesis modifications.
+        - Exclude any CD names or synthesis descriptions matching the regex:
+          r'(?i)(@|/|composite|hybrid|doped|modified)'
+        - Tables containing citations (e.g., [12], superscripts) must be fully excluded.
+
+        Strict bans:
+        - Do NOT output only a total count without listing each sample separately.
+        - Do NOT collapse multiple samples into one placeholder entry such as `P_X-CDs`, `intermediate ratios`, `same as above`, `general synthesis method`, `etc.`, or `and so on`.
+        - Do NOT leave reference phrases unresolved anywhere in a sample block, including `same as above`, `same method`, `similar procedure`, `analogous synthesis`, or `representative example`.
+        - Do NOT merge a chiral pair or any other paired samples into one block.
+        - Do NOT omit a synthesized control/baseline/blank/parent sample just because it is discussed as a comparison.
+        - Do NOT invent a control sample merely because the paper compares against a control, blank, parent, pristine, or baseline unless that control is explicitly stated to be prepared/synthesized in this paper or is uniquely determined by an explicit omission/replacement recipe.
+        - Do NOT put multiple ratios, multiple condition values, multiple paired samples, or an entire parameter series inside a single sample block.
+        - Do NOT say that several samples are omitted.
+        - Do NOT replace several samples with one generic series name.
+        - Also list control samples or baseline CDs (e.g., same method except without a precursor) as separate entries with full synthesis details.
+        - Do NOT infer nonexistent intermediate samples from an open range, vague range, or qualitative wording such as `various`, `different`, `several`, `a range of`, `from ... to ...`, or `between ... and ...` unless the paper also gives a complete discrete schedule that uniquely determines every member.
+        - Do NOT rewrite `β-cyclodextrin` as `Cyclodextrin` or `-Cyclodextrin`, and do NOT rewrite `β-alanine` as `Alanine` or `-Alanine`.
+
+        Output Format (plain text only, no tables, no code fences, no introductory analysis, no summary):
+
+        CDs Name: [Name]
+        Synthesis Method: [Method; if there are multiple synthesis-stage reaction steps, use `step1: ...; step2: ...`]
+        Precursors: [Precursors; if there are multiple synthesis-stage reaction steps, use `step1: ...; step2: ...`]
+        Reaction Solvents: [Solvents; reaction-stage only; if there are multiple synthesis-stage reaction steps, use `step1: ...; step2: ...`]
+        Temperature: [Temperature or N/A; if there are multiple synthesis-stage reaction steps, use `step1: ...; step2: ...`]
+        Time: [Time or N/A; if there are multiple synthesis-stage reaction steps, use `step1: ...; step2: ...`]
+        Precursor Quantity: [Quantity clearly matched to precursor; keep original %/ratio format; if there are multiple synthesis-stage reaction steps, use `step1: ...; step2: ...`]
+        Solvent Volume: [Volume clearly matched to solvent; if there are multiple synthesis-stage reaction steps, use `step1: ...; step2: ...`]
+        Microwave Power: [Power or N/A; if there are multiple synthesis-stage reaction steps, use `step1: ...; step2: ...`]
+        Purification Methods: [Methods in original order; do NOT label them as synthesis `step1/step2`]
+
+        CDs Name: [Next Name]
+        ... repeat the full block for every synthesized sample ...
+
+        Bad output example:
+        - `Number of synthesized CDs: 10`
+        - `CDs Name: P_X-CDs (Intermediate Ratios)`
+        - `The remaining samples follow the same method`
+
+        Good output rule:
+        - If there are 10 samples, there must be 10 separate `CDs Name:` lines.
+        - If names can be inferred from an explicit naming rule stated in the paper, expand them individually.
+        - If one method is shared by many samples, duplicate that method block for each sample instead of referring back to another sample.
+        - If a paper synthesizes a paired set or includes synthesized controls, every member must appear as its own `CDs Name:` block.
+
+        ---
+
+        Original Text:
+        {original_text}
+
+        Refined Text:
+        {refined_text}
+        """
+    ).strip()
+
+    return prompt

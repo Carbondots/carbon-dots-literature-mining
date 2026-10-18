@@ -1,0 +1,77 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P011
+# source_file: property_mining/08_llm_route_main_to_app_vs.py
+# source_lines: 140-208
+# function: build_step1_recheck_prompt
+# parameters: *, sample_name: str, tag: str, final_sentence: str, evidence_text: str
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_step1_recheck_prompt(
+    *,
+    sample_name: str,
+    tag: str,
+    final_sentence: str,
+    evidence_text: str,
+) -> str:
+    return f"""You are an expert in classifying photoluminescence (PL) properties of carbon dots (CDs).
+
+Your task is to classify ONE refined property sentence for a single target sample and a single tag into one of four categories: "main", "app", "vs", or "drop".
+
+IMPORTANT: You are deciding the category ONLY for the target sample_name, even if the sentence mentions other samples or composite systems.
+
+RESPONSE FORMAT:
+- Output exactly ONE JSON object and then the string {END_SENTINEL}.
+- Do NOT output any other text, comments, or markdown.
+
+{{
+  "decision": "<main or app or vs or drop>"
+}}{END_SENTINEL}
+
+INPUTS:
+- sample_name = "{sample_name}"
+- tag         = "{tag}"
+- sentence:
+  {final_sentence}
+
+- evidence_text:
+  {evidence_text}
+
+CATEGORY DEFINITIONS:
+
+1) "main"  (intrinsic property of the free CDs sample)
+   - The sentence describes an intrinsic PL property of the free CDs sample "{sample_name}" under normal characterization conditions.
+   - It does NOT rely on an external analyte, detection target, imaging subject, anti-counterfeiting pattern, or any other functional application scenario.
+   - It does NOT focus on a trend or comparison.
+   - It is NOT exclusively describing a composite labeled with the character "@" as the only emitting material.
+
+2) "app"  (application-level PL behaviour)
+   - The sentence describes PL behavior of CDs being used in a concrete functional application, such as:
+     * sensing or detection of analytes, ions, biomolecules, cells, real samples, or environmental samples;
+     * fluorescence imaging, cell imaging, bio-labeling, marking, tracking, or probes;
+     * anti-counterfeiting, encryption, information storage, or other optical applications.
+   - Typical clues: "detect", "sense", "image", "label", "mark", "encode", "anti-counterfeiting", "encryption", "real sample", "detection limit", etc.
+   - It may involve composites or films, including labels containing "@"; what matters is the functional use of PL.
+
+3) "vs"  (comparative or series-level behaviour)
+   - The sentence expresses a clear comparison or trend of the PL property with respect to another sample, composition, synthesis parameter, or state.
+
+4) "drop"
+   - The sentence should not be kept in any category for this project.
+
+SIMPLIFIED RULE FOR '@' COMPOSITES (VERY IMPORTANT):
+- Any material label that contains the character "@" (for example "CDs@silica", "CDs@polymer") is treated as a composite/support system.
+- If the sentence describes ONLY such composite(s) and there is NO clear free CDs system acting as the emitting material, then:
+  * do NOT choose "main";
+  * if it clearly belongs to a functional application, choose "app";
+  * else if it clearly expresses a comparison or trend, choose "vs";
+  * otherwise choose "drop".
+- If the sentence mentions BOTH free CDs (labels without "@") and composite(s) with "@", classify the sentence for the target sample_name using the general definitions above:
+  * the mere presence of "@" in some other sample names does NOT automatically force "drop";
+  * the target sample_name can still be "main" if the sentence reports its intrinsic property together with other samples.
+
+DECISION PRIORITY:
+1) app  (application behaviour)
+2) vs   (comparative / series-level behaviour)
+3) main (intrinsic stand-alone property)
+4) drop (only if it should not be kept at all)
+"""

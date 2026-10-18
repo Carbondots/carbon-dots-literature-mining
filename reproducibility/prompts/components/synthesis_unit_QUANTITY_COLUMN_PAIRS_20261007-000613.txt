@@ -1,0 +1,4 @@
+QUANTITY_COLUMN_PAIRS = [
+    ("Precursor_Amount", "Precursor"),
+    ("Solvent_Volume", "Solvent"),
+]

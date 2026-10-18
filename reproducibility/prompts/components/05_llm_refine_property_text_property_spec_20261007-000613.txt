@@ -1,0 +1,33 @@
+def property_spec(tag: str, sample_name: str) -> str:
+    sample_name = to_json_string_content(sample_name)
+    specs = {
+        "Ex": (
+            f"Only refine excitation wavelength (Ex) when the evidence explicitly assigns a numeric wavelength with a unit "
+            f"to {sample_name}. Ignore scan ranges and omit the tag if the wavelength is not safely attributable."
+        ),
+        "Em": (
+            f"Only refine emission wavelength (Em) when the evidence explicitly assigns a numeric emission value with a unit "
+            f"to {sample_name}. Do not turn series boundaries or generic trend endpoints into a sample-specific value."
+        ),
+        "QY": (
+            f"Only refine photoluminescence quantum yield (QY) when the evidence gives a clear numeric percentage for "
+            f"{sample_name}. Do not mix reference dyes or other samples."
+        ),
+        "lifetime": (
+            f"Only refine lifetime when the evidence gives an explicit lifetime value with a time unit for {sample_name}. "
+            "Keep the reported units and do not average separate components."
+        ),
+        "ExDep": (
+            f"Only refine excitation dependence (ExDep) when the evidence explicitly states that the emission of "
+            f"{sample_name} changes with excitation or stays unchanged with excitation."
+        ),
+        "Chiral": (
+            f"Only refine Chiral when the evidence explicitly describes {sample_name} itself as chiral or achiral."
+        ),
+        "CPL": (
+            f"Only refine CPL when the evidence explicitly states that {sample_name} shows circularly polarized luminescence."
+        ),
+    }
+    if tag not in specs:
+        raise ValueError(f"Unknown property tag: {tag}")
+    return specs[tag]

@@ -1,0 +1,79 @@
+def refine_property_spec(tag: str, sample_name: str = "the sample") -> str:
+    common_guard = (
+        "- Standalone-only: extract properties ONLY for the standalone prepared sample named in [Sample name], not for any combined, mixed, complex, composite, or system state.\n"
+        "- If the evidence describes the sample AFTER adding, binding, mixing, or introducing something, keep ONLY the baseline value for the standalone sample BEFORE or without that addition.\n"
+        "  If the baseline value is not explicitly stated, output NONE.\n"
+        "- If the evidence reports values under multiple synthesis or preparation conditions, treat them as different prepared batches.\n"
+        f"  You MUST extract only the value or values that match the synthesis or preparation conditions in the [Sample description] for {sample_name}.\n"
+        "  If you cannot uniquely match them, output NONE.\n"
+        "- Ignore values that are clearly literature examples or previous reports unless explicitly stated as this work for this exact sample.\n"
+    )
+    common_numeric = (
+        f"- Keep ONLY numeric value(s) explicitly stated in the evidence_text and assignable to {sample_name} for this tag.\n"
+        "- NO INFERENCE: every number you output MUST appear in the evidence text.\n"
+        "- You may output one or multiple discrete values ONLY when the evidence explicitly provides multiple values for the SAME standalone sample under different stated measurement conditions.\n"
+        "- If a value is reported with conditions, include those stated conditions in the same sentence and do not invent missing conditions.\n"
+        "- Do NOT output broad numeric ranges unless the evidence explicitly reports a range for this same standalone sample under a defined condition.\n"
+    )
+
+    if tag == "Em":
+        return (
+            "[Em - Emission wavelength]\n"
+            + common_guard
+            + common_numeric
+            + "- The value(s) must refer to emission, fluorescence, or photoluminescence peak or maximum of the standalone sample, not excitation or absorption.\n"
+            + "- If the evidence describes excitation-dependent emission peak shifts for the same sample, do NOT extract the endpoints as intrinsic Em; output NONE unless a fixed Em at a fixed excitation is explicitly stated.\n"
+            + "- 'Monitored at XXX nm' in sensing or calibration is a readout channel, not an intrinsic Em peak, unless explicitly labeled as a peak or maximum.\n"
+        )
+    if tag == "Ex":
+        return (
+            "[Ex - Excitation wavelength]\n"
+            + common_guard
+            + common_numeric
+            + "- The value(s) must refer to excitation wavelength(s) used or optimal for the sample's intrinsic photoluminescence, not absorption bands.\n"
+            + "- If the evidence describes a shift of optimal or maximum excitation for the same sample as conditions change, do NOT extract the endpoints as intrinsic Ex; output NONE unless a fixed Ex under a fixed condition is explicitly stated.\n"
+            + "- 'Under 365 nm UV light' for visual observation must NOT be treated as Ex.\n"
+        )
+    if tag == "QY":
+        return (
+            "[QY - Photoluminescence quantum yield]\n"
+            + common_guard
+            + common_numeric
+            + "- QY is usually a percentage.\n"
+            + "- If the evidence reports a change from baseline to after addition, keep ONLY the baseline value without the added species.\n"
+            + "- If QY is only given for composites, analyte-bound, or mixed states and never for the standalone sample, output NONE.\n"
+        )
+    if tag == "lifetime":
+        return (
+            "[lifetime - PL lifetime]\n"
+            + common_guard
+            + common_numeric
+            + "- Report lifetime value(s) exactly as stated with correct units; do NOT invent averages.\n"
+            + "- If the evidence reports a change from baseline to after addition, keep ONLY the baseline value without the added species.\n"
+            + "- If lifetime is only given for composites, analyte-bound, or mixed states and never for the standalone sample, output NONE.\n"
+        )
+    if tag == "ExDep":
+        return (
+            "[ExDep - Excitation dependence]\n"
+            + common_guard
+            + f"- Apply ONLY when the evidence explicitly states excitation-dependent or excitation-independent behavior for the standalone sample {sample_name}.\n"
+            "- Multiple Ex-Em pairs alone are NOT sufficient; there must be an explicit dependence or independence statement.\n"
+            "- Output a qualitative one-sentence statement and do not output numeric ranges.\n"
+        )
+    if tag == "Chiral":
+        return (
+            "[Chiral - Sample chirality]\n"
+            + common_guard
+            + f"- Report chirality only when {sample_name} itself is explicitly described as chiral.\n"
+            "- Do NOT infer chirality from chiral precursors, ligands, or matrices alone.\n"
+            "- If unclear or only described for a combined state, output NONE.\n"
+        )
+    if tag == "CPL":
+        return (
+            "[CPL - Circularly polarized luminescence]\n"
+            + common_guard
+            + f"- Report CPL only when the evidence explicitly states that {sample_name} shows circularly polarized luminescence or emission.\n"
+            "- Do NOT infer CPL from ordinary PL or from chirality alone.\n"
+            "- If unclear or only described for a combined state, output NONE.\n"
+        )
+    raise ValueError(f"Unsupported tag for Step 7 refinement: {tag}")

@@ -1,0 +1,16 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P018
+# source_file: property_mining/11_llm_structure_and_deduplicate_properties.py
+# source_lines: 446-453
+# function: build_choose_best_prompt
+# parameters: tag: str, sample_name: str, sentences: Sequence[str]
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_choose_best_prompt(tag: str, sample_name: str, sentences: Sequence[str]) -> str:
+    numbered = "\n".join(f"{index}. {sentence}" for index, sentence in enumerate(sentences, start=1))
+    return f"""Choose the best sentence for the same property.
+Target sample: {sample_name}
+Target tag: {normalize_tag_name(tag)}
+Prefer the clearest sentence with the same core value but richer valid experimental context.
+Candidates:\n{numbered}
+Return exactly one JSON object {{"best_index": <1-based integer>}} and append {END_SENTINEL}."""

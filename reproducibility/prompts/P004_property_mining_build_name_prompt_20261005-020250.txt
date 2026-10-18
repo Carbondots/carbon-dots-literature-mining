@@ -1,0 +1,37 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P004
+# source_file: property_mining/04_llm_decide_samples_and_props.py
+# source_lines: 319-347
+# function: build_name_prompt
+# parameters: candidates: Sequence[str], window_text: str, whitelist: Dict[str, str]
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_name_prompt(candidates: Sequence[str], window_text: str, whitelist: Dict[str, str]) -> str:
+    return dedent(
+        f"""
+        You are an expert in sample-name detection for carbon-dot materials.
+
+        Return exactly one JSON object and then append {END_SENTINEL}. Do not add prose or markdown.
+
+        Task:
+        - Decide which WHITELIST sentences mention which items from SAMPLE_NAMES.
+        - Match only names from SAMPLE_NAMES.
+        - Case-insensitive matching is allowed.
+        - If a sentence clearly refers to a family label that covers multiple candidate names,
+          return all matching candidates.
+
+        Output schema:
+        {{"name_hits":[{{"name":"<one of SAMPLE_NAMES>","sent_id":"<whitelist id>"}}]}}
+
+        SAMPLE_NAMES:
+        {json.dumps(list(candidates), ensure_ascii=False)}
+
+        WHITELIST:
+        {json.dumps([{"sent_id": sent_id, "text": text} for sent_id, text in whitelist.items()], ensure_ascii=False)}
+
+        ===== CONTEXT WINDOW =====
+        {window_text}
+        ===== END =====
+        Output must end with {END_SENTINEL}
+        """
+    ).strip()

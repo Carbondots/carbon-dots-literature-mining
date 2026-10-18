@@ -1,0 +1,60 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P026
+# source_file: synthesis_mining/06_llm_extract_tables.py
+# source_lines: 660-711
+# function: build_repair_patch_prompt
+# parameters: name_content: str, canonical_names: list[str], table_md: str, fail_info: dict
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_repair_patch_prompt(
+    name_content: str,
+    canonical_names: list[str],
+    table_md: str,
+    fail_info: dict,
+) -> str:
+    canonical_json = json.dumps(canonical_names, ensure_ascii=False)
+    fail_json = json.dumps(fail_info or {}, ensure_ascii=False)
+    return f"""
+# ROLE
+You are a strict table patch generator.
+
+# Goal
+Fix quantity/volume format errors with MINIMAL edits, using name content ({{id}}.md) as the primary evidence.
+
+# Hard constraints
+- Canonical sample names and order are fixed: {canonical_json}
+- Do not add/delete/reorder rows.
+- Do not modify sample names.
+- You may patch ONLY these columns:
+  1) Precursor_Amount
+  2) Solvent_Volume
+- Do not invent numbers/units.
+- N/A is last resort only:
+  if value can be inferred from same-procedure relation in name content, do NOT output N/A.
+- Preserve explicit ratio/% wording when that is how the paper defines the current sample.
+- Preferred format:
+  SUBJECT (NUMBER UNIT)
+  SUBJECT_A (NUMBER UNIT), SUBJECT_B (NUMBER UNIT)
+
+# Generic examples
+- Bad: 10 mg (PRECURSOR_A) -> Good: PRECURSOR_A (10 mg)
+- Bad: 4 mL (SOLVENT_A) -> Good: SOLVENT_A (4 mL)
+- Bad: 20 mg (mg) -> Good: PRECURSOR_A (20 mg)
+
+# Current fail_info
+{fail_json}
+
+# Current table
+{table_md}
+
+# Name content ({{id}}.md)
+{name_content}
+
+# Output format (JSON ONLY)
+{{
+  "patches": [
+    {{"row_name": "SAMPLE_A", "column": "Precursor_Amount", "value": "PRECURSOR_X (10 mg)"}},
+    {{"row_name": "SAMPLE_A", "column": "Solvent_Volume", "value": "SOLVENT_Y (4 mL)"}}
+  ]
+}}
+""".strip()

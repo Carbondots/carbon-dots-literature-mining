@@ -1,0 +1,26 @@
+def make_field_rule(column: str) -> str:
+    if column in QUANTITY_VALUE_COLUMNS:
+        if column == "Precursor_Amount":
+            return (
+                '- For "Precursor_Amount": Do NOT invent numbers; tie every value to its precursor subject '
+                '(e.g., "lysine (3 g)"). If the Precursor column lists multiple precursors, every precursor '
+                'must appear exactly once in the same order. If one precursor lacks an explicit value and it '
+                'cannot be inferred, keep it as "SUBJECT (N/A)" instead of dropping the name. If a complementary '
+                'ratio or naming rule lets you infer the missing counterpart, include all inferred pairs. '
+                'Percentages and ratios are already valid values; keep the paper\'s original ratio/% format and do not convert it into mass, moles, molarity, or another unit. '
+                'Preserve the quantitative frame used for the current sample; if the current sample is defined by mol%, wt%, or ratio, do not borrow another sample\'s mM/mmol/mg values to rewrite it into a different unit system. '
+                'For example, if the paper states `95 mol% phenylalanine + 5 mol% citric acid` for the current sample, keep that ratio expression instead of converting it into mM using another sample.'
+            )
+        return (
+            '- For "Solvent_Volume": Do NOT invent numbers; tie every value to its solvent subject. '
+            'If the Solvent column lists multiple solvents, every solvent must appear exactly once in the same order. '
+            'If one solvent lacks an explicit volume and it cannot be inferred, keep it as "SUBJECT (N/A)" instead of dropping the name. '
+            'If the paper uses a ratio or percentage for solvent composition, keep that original ratio/% format and do not convert it into another unit.'
+        )
+    if column == "Solvent":
+        return '- For "Solvent": reaction solvent only; count only liquids used before or during precursor dissolution and the synthesis reaction itself. Washing, rinsing, extraction, dialysis, elution, re-dispersion, and other post-treatment liquids belong to Purification; if unclear, return "N/A".'
+    if column == "Purification":
+        return '- For "Purification": purification steps only (e.g., filtration/centrifugation/dialysis) in original order. Do not label purification actions as synthesis `step1/step2`; if unclear, return "N/A".'
+    if column in {"Temperature", "Time", "Microwave_Power"}:
+        return f'- For "{column}": if multiple sequential synthesis-stage reaction steps exist, use `step1: ...; step2: ...` in chronological order. Do not create step labels for cooling, workup, or purification. If the value is not explicitly stated, return "N/A"; do not invent room temperature, ambient conditions, or other defaults.'
+    return f'- For "{column}": one concise line. If multiple sequential synthesis-stage reaction steps are explicit, use `step1: ...; step2: ...` in chronological order. Do not create step labels for cooling, workup, or purification. If unclear, return "N/A".'

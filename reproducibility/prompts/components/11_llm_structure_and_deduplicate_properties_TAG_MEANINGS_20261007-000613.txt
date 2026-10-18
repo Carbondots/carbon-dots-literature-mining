@@ -1,0 +1,9 @@
+TAG_MEANINGS = {
+    "Ex": "The excitation wavelength used to excite the target carbon-dot sample.",
+    "Em": "The emission peak wavelength of the target carbon-dot sample.",
+    "QY": "The photoluminescence quantum yield of the target carbon-dot sample.",
+    "lifetime": "The photoluminescence decay lifetime of the target carbon-dot sample.",
+    "ExDep": "Whether the target sample shows excitation-dependent emission behavior.",
+    "Chiral": "Whether the target sample itself is described as chiral or optically active.",
+    "CPL": "Whether the target sample itself is described as showing circularly polarized luminescence.",
+}

@@ -1,0 +1,125 @@
+# SOURCE TEMPLATE EXCERPT (not a live invocation)
+# prompt_id: P002
+# source_file: property_mining/03_ocr_tables_and_relabel.py
+# source_lines: 210-326
+# function: build_table_ocr_prompt
+# parameters: table_id: str='unknown_table'
+# Dynamic values are supplied by the caller in source order; no model was called for this export.
+
+def build_table_ocr_prompt(table_id: str = "unknown_table") -> str:
+    prompt = f"""
+You are an expert in reading and transcribing tables from scientific articles.
+
+You are given ONE image that contains one or more closely connected tables about materials or samples.
+Some tables may share the same grid, and in the middle there may be a row that introduces NEW column labels
+for the following lower rows.
+Your task is to read the table CAREFULLY and output a clean, machine-readable text representation.
+
+You MUST NOT explain or interpret the table.
+You MUST ONLY transcribe what is visible in the table and its internal structure.
+
+Important JSON escaping rule:
+- The final output must be valid JSON.
+- Therefore, INSIDE every string in the "lines" array, you MUST NOT use any double quote characters (").
+- If a cell is visually empty, you MUST write the literal token EMPTY (no quotes) in place of its value.
+- Example of an allowed line:
+  Row 1: col0=EMPTY; A=a1; B=EMPTY; C=c1; D=d1.
+
+Return EXACTLY ONE JSON object followed by the token <END_OF_JSON>.
+
+The JSON must have the following structure:
+
+{{
+  "table_id": "{table_id}",
+  "lines": [
+    "COLUMNS: ...",
+    "Row 1: ...",
+    "Row 2: ..."
+  ]
+}}
+
+Rules:
+- "table_id" is exactly the string given above.
+- "lines" is an array of strings.
+- Each string in "lines" MUST be either:
+  - one "COLUMNS: ..." line, or
+  - one "Row <i>: ..." line.
+- Do NOT include empty strings in the list.
+- Do NOT add any other keys to the JSON.
+- After the JSON object, print the token <END_OF_JSON>.
+
+--------------------------------
+LINE-LEVEL FORMAT (STRICT)
+--------------------------------
+
+You must only output two kinds of lines inside "lines":
+
+1) Column header block line (there may be MORE THAN ONE):
+
+   COLUMNS: col0; <header_1>; <header_2>; ...; <header_N>
+
+   Rules:
+   - A "COLUMNS:" line defines one column-header block.
+   - "col0" is always the name of the first column (usually the leftmost index column).
+   - <header_1>, <header_2>, ... are the visible column header texts for the remaining columns,
+     in left-to-right order.
+   - When there are multiple header blocks in a single image, you MUST output multiple
+     "COLUMNS:" lines, one for each block, in the order they appear from top to bottom.
+
+   MID-TABLE GROUP HEADERS:
+   - Sometimes there is a row in the middle like:
+       [ empty | NEW_HEADER_1 | NEW_HEADER_2 | empty | empty ]
+     which visually introduces NEW column labels for a lower block of rows.
+   - Treat such a row as a NEW header row (a "group header"), NOT as data.
+   - To create a new "COLUMNS:" line from such a row:
+     * The first column header is always "col0".
+     * For any column where this row has a non-empty label, use that text as the new header name.
+     * For any column where this row is visually empty, you MUST inherit the column name
+       from the previous COLUMNS header block.
+   - After this new "COLUMNS:" line, all subsequent "Row ..." lines belong to this new header block,
+     until you output another "COLUMNS:" line or reach the end.
+
+2) Data row line (THIS IS VERY IMPORTANT):
+
+   Row <i>: col0=<value_0>; <header_1>=<value_1>; <header_2>=<value_2>; ...; <header_N>=<value_N>.
+
+   STRICT RULES:
+   - <i> is the row index in the visible grid, starting from 1 for the first visible row,
+     then 2, 3, 4, ... from top to bottom.
+   - For EACH "Row <i>" line, you MUST:
+     * Use EXACTLY the column header names specified in the most recent COLUMNS line.
+     * Output ALL these column names once and only once, in the SAME order.
+     * NEVER output bare values without "header=value".
+     * NEVER drop a column; NEVER add extra unnamed values.
+   - For each cell value <value_k>:
+     * If the cell is visually empty, write EMPTY (do NOT use quotes).
+     * Otherwise, <value_k> is the exact text in that cell (no extra quotes).
+   - Keep numbers and units exactly as printed in the table:
+     * Example: 20,000 must remain 20,000
+     * Example: 3 g must remain 3 g
+   - You may also output a "Row ..." line for a pure header row; such a line simply repeats
+     the header texts as values, still in the form header=value for every column.
+
+3) NO OTHER TEXT:
+   - Inside the JSON, do NOT include comments or explanations.
+   - Outside the JSON, do NOT output anything except the trailing <END_OF_JSON> token.
+   - Do NOT output markdown code fences.
+
+--------------------------------
+TASK
+--------------------------------
+
+Now read the attached table image for table_id="{table_id}" and:
+
+1. Identify each column-header block and output a corresponding "COLUMNS: ..." line.
+2. For each visible row in the grid, output one "Row <i>: ..." line using the current header block.
+3. When you see a mid-table row that introduces new column labels with some empty cells,
+   treat it as a new header block and construct a new "COLUMNS: ..." line, inheriting any
+   missing header names from the previous block.
+4. In every "Row <i>" line, you MUST output ALL columns as header=value pairs,
+   using EXACTLY the header names from the most recent "COLUMNS:" line and in the SAME order.
+5. Represent empty cells with the token EMPTY and never use any double quotes (") inside the lines.
+6. Return everything inside the JSON object with keys "table_id" and "lines".
+7. After the JSON object, output the token <END_OF_JSON>.
+"""
+    return prompt.strip()
